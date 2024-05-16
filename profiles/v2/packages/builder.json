@@ -1,0 +1,73 @@
+{
+  "__version__": "1.3.7",
+  "log": {
+    "level": 4
+  },
+  "common": {
+    "polyfills": {
+      "asyncFunctions": true
+    },
+    "startScene": "39f4050b-725b-46e2-b9d1-1fe84456641f"
+  },
+  "BuildTaskManager": {
+    "taskMap": {
+      "1715879600110": {
+        "type": "build",
+        "id": "1715879600110",
+        "progress": 1,
+        "state": "success",
+        "stage": "build",
+        "message": "5-17-2024 00:25:33 build success in 18 s!",
+        "options": {
+          "name": "TigerDragon",
+          "server": "",
+          "platform": "web-desktop",
+          "buildPath": "project://build",
+          "debug": false,
+          "md5Cache": false,
+          "skipCompressTexture": false,
+          "sourceMaps": false,
+          "polyfills": {
+            "asyncFunctions": true
+          },
+          "experimentalEraseModules": false,
+          "startSceneAssetBundle": false,
+          "bundleConfigs": [],
+          "useBuiltinServer": false,
+          "mainBundleIsRemote": false,
+          "mainBundleCompressionType": "merge_dep",
+          "useSplashScreen": true,
+          "bundleCommonChunk": false,
+          "packAutoAtlas": true,
+          "startScene": "39f4050b-725b-46e2-b9d1-1fe84456641f",
+          "outputName": "web-desktop",
+          "taskName": "web-desktop",
+          "scenes": [
+            {
+              "url": "db://assets/Scene/Game.scene",
+              "uuid": "6223537d-4143-493b-8d2a-2511d740155b"
+            },
+            {
+              "url": "db://assets/Scene/Login.scene",
+              "uuid": "b30dd591-b5fd-46f7-a212-7e2b3d93ad49"
+            },
+            {
+              "url": "db://assets/Scene/Logo.scene",
+              "uuid": "39f4050b-725b-46e2-b9d1-1fe84456641f"
+            },
+            {
+              "url": "db://assets/Scene/scene-2d.scene",
+              "uuid": "d2909ce2-fa07-4516-a217-d75e95e77804"
+            }
+          ],
+          "packages": {},
+          "__version__": "1.3.7",
+          "buildMode": "normal",
+          "logDest": "project://temp/builder/log/web-desktop5-17-2024 00-13.log"
+        },
+        "time": "5-17-2024 00:25:14",
+        "dirty": false
+      }
+    }
+  }
+}

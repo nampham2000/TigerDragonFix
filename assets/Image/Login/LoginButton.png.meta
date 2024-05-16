@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "ec244b85-0b16-4909-babd-3dfcebd9e1ad",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "ec244b85-0b16-4909-babd-3dfcebd9e1ad@6c48a",
+      "displayName": "LoginButton",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "ec244b85-0b16-4909-babd-3dfcebd9e1ad",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "ec244b85-0b16-4909-babd-3dfcebd9e1ad@f9941",
+      "displayName": "LoginButton",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 5.5,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 208,
+        "height": 69,
+        "rawWidth": 208,
+        "rawHeight": 80,
+        "borderTop": 20,
+        "borderBottom": 20,
+        "borderLeft": 40,
+        "borderRight": 40,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -104,
+            -34.5,
+            0,
+            104,
+            -34.5,
+            0,
+            -104,
+            34.5,
+            0,
+            104,
+            34.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            0,
+            80,
+            208,
+            80,
+            0,
+            11,
+            208,
+            11
+          ],
+          "nuv": [
+            0,
+            0.1375,
+            1,
+            0.1375,
+            0,
+            1,
+            1,
+            1
+          ],
+          "minPos": [
+            -104,
+            -34.5,
+            0
+          ],
+          "maxPos": [
+            104,
+            34.5,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ec244b85-0b16-4909-babd-3dfcebd9e1ad@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false,
+    "redirect": "ec244b85-0b16-4909-babd-3dfcebd9e1ad@f9941"
+  }
+}
