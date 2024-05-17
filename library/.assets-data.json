@@ -12624,7 +12624,11 @@
         "69913111-e32d-408a-a801-566ba7d935d9@f9941",
         "44871bd3-e710-4256-9f82-55b4eca6bf0e@f9941",
         "b0a0136d-921b-4ee3-b93e-a9f8e2c846fa",
-        "939b5a72-a6a2-490e-b5ea-ec6c1151107e@f9941"
+        "939b5a72-a6a2-490e-b5ea-ec6c1151107e@f9941",
+        "95230981-3625-4e23-bcc0-ca077c452b9e",
+        "6698d124-9e39-4ebd-b3f4-4825aea70e40",
+        "781d0bab-d8c1-44f6-9a40-99ae6c8c711b@f9941",
+        "c86c0082-fcce-4f25-aed6-6eed24b3cff7"
       ],
       "dependScripts": [
         "b24277e2-2dba-4774-9f76-1889959e58c0",
@@ -19391,6 +19395,45 @@
         "aea43730-d20d-4c9f-8565-281c859e9632@f9941"
       ],
       "dependScripts": []
+    },
+    "versionCode": 0
+  },
+  "781d0bab-d8c1-44f6-9a40-99ae6c8c711b": {
+    "url": "db://assets/Image/Login/6698d124-9e39-4ebd-b3f4-4825aea70e40.ab12e.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 0
+  },
+  "781d0bab-d8c1-44f6-9a40-99ae6c8c711b@6c48a": {
+    "url": "db://assets/Image/Login/6698d124-9e39-4ebd-b3f4-4825aea70e40.ab12e.png@6c48a",
+    "value": {
+      "depends": [
+        "781d0bab-d8c1-44f6-9a40-99ae6c8c711b"
+      ]
+    },
+    "versionCode": 0
+  },
+  "781d0bab-d8c1-44f6-9a40-99ae6c8c711b@f9941": {
+    "url": "db://assets/Image/Login/6698d124-9e39-4ebd-b3f4-4825aea70e40.ab12e.png@f9941",
+    "value": {
+      "depends": [
+        "781d0bab-d8c1-44f6-9a40-99ae6c8c711b@6c48a"
+      ]
+    },
+    "versionCode": 0
+  },
+  "95230981-3625-4e23-bcc0-ca077c452b9e": {
+    "url": "db://assets/Animation/ResAnim.anim",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 0
+  },
+  "c86c0082-fcce-4f25-aed6-6eed24b3cff7": {
+    "url": "db://assets/Animation/WarningEmail.anim",
+    "value": {
+      "depends": []
     },
     "versionCode": 0
   }

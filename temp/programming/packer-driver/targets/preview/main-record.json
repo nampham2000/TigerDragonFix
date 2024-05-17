@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 29753.85750000016,
+      "mTimestamp": 6345.5625,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -409,11 +409,11 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 20033366.138600003,
+      "mTimestamp": 30700077.612917006,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
-          "value": "file:///C:/ProgramData/cocos/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts",
+          "value": "file:///Applications/Cocos/Creator/3.8.2/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts",
           "resolved": "__unresolved_0",
           "loc": {
             "start": {
@@ -422,12 +422,12 @@
             },
             "end": {
               "line": 4,
-              "column": 139
+              "column": 155
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/AudioController.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts",
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
@@ -436,12 +436,12 @@
             },
             "end": {
               "line": 5,
-              "column": 108
+              "column": 84
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/Chip.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Chip.ts",
           "resolved": "__unresolved_2",
           "loc": {
             "start": {
@@ -450,12 +450,12 @@
             },
             "end": {
               "line": 6,
-              "column": 97
+              "column": 73
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/Constant.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Constant.ts",
           "resolved": "__unresolved_3",
           "loc": {
             "start": {
@@ -464,12 +464,12 @@
             },
             "end": {
               "line": 7,
-              "column": 101
+              "column": 77
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/GameController.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/GameController.ts",
           "resolved": "__unresolved_4",
           "loc": {
             "start": {
@@ -478,12 +478,12 @@
             },
             "end": {
               "line": 8,
-              "column": 107
+              "column": 83
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LoginScript/Connect.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Connect.ts",
           "resolved": "__unresolved_5",
           "loc": {
             "start": {
@@ -492,12 +492,12 @@
             },
             "end": {
               "line": 9,
-              "column": 112
+              "column": 88
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LoginScript/Controller.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Controller.ts",
           "resolved": "__unresolved_6",
           "loc": {
             "start": {
@@ -506,12 +506,12 @@
             },
             "end": {
               "line": 10,
-              "column": 115
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LogoScripts/Controller.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LogoScripts/Controller.ts",
           "resolved": "__unresolved_7",
           "loc": {
             "start": {
@@ -520,12 +520,12 @@
             },
             "end": {
               "line": 11,
-              "column": 115
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/NetworkConnect.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/NetworkConnect.ts",
           "resolved": "__unresolved_8",
           "loc": {
             "start": {
@@ -534,12 +534,12 @@
             },
             "end": {
               "line": 12,
-              "column": 107
+              "column": 83
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/PlayerList.ts",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/PlayerList.ts",
           "resolved": "__unresolved_9",
           "loc": {
             "start": {
@@ -548,12 +548,12 @@
             },
             "end": {
               "line": 13,
-              "column": 103
+              "column": 79
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js",
+          "value": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js",
           "resolved": "__unresolved_10",
           "loc": {
             "start": {
@@ -562,7 +562,7 @@
             },
             "end": {
               "line": 14,
-              "column": 134
+              "column": 110
             }
           }
         }
@@ -572,77 +572,77 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/ProgramData/cocos/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts"
+            "url": "file:///Applications/Cocos/Creator/3.8.2/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/AudioController.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/Chip.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Chip.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/Constant.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Constant.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/GameController.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/GameController.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LoginScript/Connect.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Connect.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LoginScript/Controller.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Controller.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/LogoScripts/Controller.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LogoScripts/Controller.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/NetworkConnect.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/NetworkConnect.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/assets/Scripts/PlayerList.ts"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/PlayerList.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Downloads/Telegram%20Desktop/Fix4%204/Fix4/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.mjs?cjs=&original=.js"
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.mjs?cjs=&original=.js"
           },
           "messages": []
         }
@@ -858,7 +858,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1715861309706,
+      "mTimestamp": 1715914162504,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -1086,7 +1086,7 @@
       ]
     },
     "cce:/internal/ml/cjs-loader.mjs": {
-      "mTimestamp": 1715861309706,
+      "mTimestamp": 1715914162504,
       "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
       "imports": [],
       "type": "esm",
@@ -11824,6 +11824,804 @@
         "uuid": "055dedd8-8187-48d0-8ea4-eb0eee651d41"
       },
       "chunkId": "b076ca2f179334255dc0b82a2c3bff98c36ca809",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 48
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033440.247,
+        "uuid": "a2ee9b91-af14-4033-9ea4-70ee838e0c0e"
+      },
+      "chunkId": "b7846c9023a4330ff38089fb0155c04cabd8e988",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 68
+            },
+            "end": {
+              "line": 1,
+              "column": 72
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Chip.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033440.4946,
+        "uuid": "cd8d8b1c-5af2-46c8-ab1a-7bccd45446f0"
+      },
+      "chunkId": "6e156beca322db875a428ffb49835598724744e3",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 72
+            },
+            "end": {
+              "line": 1,
+              "column": 76
+            }
+          }
+        },
+        {
+          "value": "./AudioController",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 32
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Constant.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033440.6714,
+        "uuid": "174e682d-7a14-41ca-93fa-0617bca73542"
+      },
+      "chunkId": "367aed5aa1f86bfa5ff8b841c7d2b334f5dbecde",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/GameController.ts": {
+      "mTimestamp": {
+        "mtime": 1715934736897.4626,
+        "uuid": "d8ab5610-dd96-4f78-9795-6218739fe6f3"
+      },
+      "chunkId": "9aaaebb119be0741965ce0bf636c2b56432e5524",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 7
+            },
+            "end": {
+              "line": 22,
+              "column": 11
+            }
+          }
+        },
+        {
+          "value": "./Chip",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 21
+            },
+            "end": {
+              "line": 23,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./NetworkConnect",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 31
+            },
+            "end": {
+              "line": 24,
+              "column": 49
+            }
+          }
+        },
+        {
+          "value": "./AudioController",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 32
+            },
+            "end": {
+              "line": 25,
+              "column": 51
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Chip.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/NetworkConnect.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/NetworkConnect.ts": {
+      "mTimestamp": {
+        "mtime": 1715934843254.664,
+        "uuid": "f92887c2-9ea3-4ec7-b5ff-e017e453225f"
+      },
+      "chunkId": "834ec28c28cc510822b78176a00ec21abc745083",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 7
+            },
+            "end": {
+              "line": 13,
+              "column": 11
+            }
+          }
+        },
+        {
+          "value": "db://colyseus-sdk/colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 21
+            },
+            "end": {
+              "line": 16,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./AudioController",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 32
+            },
+            "end": {
+              "line": 17,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "./Chip",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 21
+            },
+            "end": {
+              "line": 18,
+              "column": 29
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/AudioController.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/Chip.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.mjs?cjs=&original=.js": {
+      "mTimestamp": 1715914033729.2322,
+      "chunkId": "e384e1125314815a5bdb463f72ffef2efc540c0a",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js": {
+      "mTimestamp": {
+        "mtime": 1715914033729.2322,
+        "uuid": "b554cfc3-98f3-4c04-ac8b-fd4ca2621ffb"
+      },
+      "chunkId": "acf6db07e96dc2e43110e6bdb69ca23e1833f175",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Connect.ts": {
+      "mTimestamp": {
+        "mtime": 1715944859886.3853,
+        "uuid": "9de53811-1bf6-4cff-9849-f4e249cab916"
+      },
+      "chunkId": "bce485f5f8d372ab066f9ad120c42cba32dc7bee",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 7
+            },
+            "end": {
+              "line": 16,
+              "column": 11
+            }
+          }
+        },
+        {
+          "value": "db://colyseus-sdk/colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 21
+            },
+            "end": {
+              "line": 18,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/waostudio/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Controller.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033441.2268,
+        "uuid": "b24277e2-2dba-4774-9f76-1889959e58c0"
+      },
+      "chunkId": "68ec052d2d9904b0205fa1987895f82a4713a5d5",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 52
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LogoScripts/Controller.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033441.404,
+        "uuid": "de371330-7879-4b42-819b-8a6686d00756"
+      },
+      "chunkId": "cdb2422041f0031e0282f9e824c77a7a009782f8",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 65
+            },
+            "end": {
+              "line": 1,
+              "column": 69
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/PlayerList.ts": {
+      "mTimestamp": {
+        "mtime": 1715914033441.6519,
+        "uuid": "055dedd8-8187-48d0-8ea4-eb0eee651d41"
+      },
+      "chunkId": "6fdd045a8c09a2090de85e5cc84d14990a1ddf18",
       "imports": [
         {
           "value": "cc"

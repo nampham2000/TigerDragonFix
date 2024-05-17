@@ -5,12 +5,25 @@
       "web-desktop": {
         "configID": "8d2e87",
         "services": []
+      },
+      "web-mobile": {
+        "configID": "8d2e87",
+        "services": []
       }
     },
     "taskOptionsMap": {
       "1715879600110": {
         "configID": "8d2e87",
         "services": []
+      },
+      "1715916240712": {
+        "configID": "8d2e87",
+        "services": []
+      },
+      "1715916317905": {
+        "configID": "8d2e87",
+        "services": [],
+        "__version__": "3.0.7"
       }
     },
     "__version__": "1.3.7"

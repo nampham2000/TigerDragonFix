@@ -98,7 +98,7 @@ export class NetworkConnect extends Component {
   totaluserBetTie: any;
   dragonReuslt;
   tigerResult;
-  namePlayer
+  namePlayer;
   winnerPLayer;
   @property({
     type: AudioController,
@@ -121,20 +121,19 @@ export class NetworkConnect extends Component {
   async connect() {
     try {
       this.client.auth.token = localStorage.getItem("Token");
-      this.room = await this.client.joinOrCreate("room1");
-
-      // const rooms = await this.client.getAvailableRooms("room1");
-      // if (rooms.length === 0) {
-      //   this.room = await this.client.create("room1");
-      //   console.log("Created new room with sessionId:", this.room.sessionId);
-      // } else {
-      //   // Nếu có phòng có sẵn, tham gia vào phòng đầu tiên trong danh sách
-      //   this.room = await this.client.crea(rooms[0].roomId);
-      //   console.log(
-      //     "Joined existing room with sessionId:",
-      //     this.room.sessionId
-      //   );
-      // }
+      // this.room = await this.client.joinOrCreate("room1");
+      const rooms = await this.client.getAvailableRooms("room1");
+      if (rooms.length === 0) {
+        this.room = await this.client.create("room1");
+        console.log("Created new room with sessionId:", this.room.sessionId);
+      } else {
+        // Nếu có phòng có sẵn, tham gia vào phòng đầu tiên trong danh sách
+        this.room = await this.client.joinById(rooms[0].roomId);
+        console.log(
+          "Joined existing room with sessionId:",
+          this.room.sessionId
+        );
+      }
       const users = {};
 
       // Sự kiện được kích hoạt khi một người dùng tham gia vào phòng
@@ -164,37 +163,28 @@ export class NetworkConnect extends Component {
       });
 
       this.room.onMessage("userCancel", (message) => {
-        console.log("mesage iddddddddddddd",message.playerId);
-        
-        console.log(this.room.state.players.get(message.playerId));
-        
-        const usercancel=this.room.state.players.get(message.playerId).displayName
+        const usercancel = this.room.state.players.get(
+          message.playerId
+        ).displayName;
         for (let i = 0; i < this.ListLabel.length; i++) {
           if (usercancel === this.ListLabel[i].string) {
-              this.ListLabel[i].node.removeAllChildren();
-            }
+            this.ListLabel[i].node.removeAllChildren();
+          }
         }
-          
       });
 
       this.room.onMessage("result", (message) => {
         // console.log(message.result);
-        console.log("rong", message.dragonCard.value);
-        console.log("ho", message.tigerCard.value);
         this.result = message.result;
       });
 
       this.room.onMessage("userBet", (message) => {
         console.log(message.betAmount);
-        
-        this.namePlayer=this.room.state.players.get(
-          message.playerID
-        );
+
+        this.namePlayer = this.room.state.players.get(message.playerID);
         if (message.playerID != this.room.sessionId) {
           this.UserBet = message.betType;
-          console.log("messsssssss",message);
-          
-          this.createSpriteNode(this.namePlayer.displayName,message.betAmount);
+          this.createSpriteNode(this.namePlayer.displayName, message.betAmount);
         } else {
           // console.log("false");
         }
@@ -222,10 +212,7 @@ export class NetworkConnect extends Component {
 
         // console.log(this.room.state);
         this.currentHost = state.currentHostId;
-        console.log(this.currentHost);
-
         const players = [...state.players.values()];
-
         this.updatePlayerList(players);
         // console.log("PlayerStatus", players[0].isHost);
         this.TotalUser = players.length;
@@ -242,64 +229,104 @@ export class NetworkConnect extends Component {
 
   updatePlayerList(playerList: any[]) {
     let displayIndex = 0;
-    const numElements = playerList.length;
+
+    [
+      {
+        0: [{}],
+      },
+    ];
+
+    // // Lấy từng giá trị value từ
+    const list = playerList[0];
+
+    const numElements = list.length;
+
     this.ListL.forEach((node) => {
       node.active = false;
     });
-    for (let i = 0; i < numElements && displayIndex < this.ListL.length; i++) {
+
+    list.forEach((value: any, key: any) => {
       if (
-        playerList[i].sessionId !== this.room.sessionId &&
-        playerList[i].sessionId !== this.currentHost
+        value.sessionId !== this.room.sessionId &&
+        value.sessionId !== this.currentHost
       ) {
-        const nameUser = this.room.state.players.get(playerList[i].sessionId);
-        this.ListLabel[displayIndex].string = nameUser.displayName;
-        this.ListL[displayIndex].active = true;
-        displayIndex++;
-        this.AudioController.onAudio(9);
+        const nameUser = value.displayName;
+        if (nameUser) {
+          // Check if nameUser is defined
+          this.ListLabel[displayIndex].string = nameUser;
+          this.ListL[displayIndex].active = true;
+          displayIndex++;
+          this.AudioController.onAudio(9);
+        } else {
+          console.warn(
+            `Player with sessionId ${value.sessionId} not found in room state.`
+          );
+        }
       }
-    }
+    });
+
+    // for (let i = 0; i < numElements && displayIndex < this.ListL.length; i++) {
+    //   if (
+    //     list[i].sessionId !== this.room.sessionId &&
+    //     list[i].sessionId !== this.currentHost
+    //   ) {
+    //     const nameUser = list[i];
+    //     console.log("PLayerIaddddddddd", playerList[i].sessionId);
+
+    //     console.log("NAMEUSERRRRRRRRRRRRR", nameUser);
+    //     if (nameUser) {
+    //       // Check if nameUser is defined
+    //       this.ListLabel[displayIndex].string = nameUser.displayName;
+    //       this.ListL[displayIndex].active = true;
+    //       displayIndex++;
+    //       this.AudioController.onAudio(9);
+    //     } else {
+    //       console.warn(
+    //         `Player with sessionId ${playerList[i].sessionId} not found in room state.`
+    //       );
+    //     }
+    //   }
+    // }
     for (let i = displayIndex; i < this.ListL.length; i++) {
       this.ListL[i].active = false;
     }
   }
 
-  private createSpriteNode(sessionId: string,betAmount:number) {
+  private createSpriteNode(sessionId: string, betAmount: number) {
     if (betAmount < 1 || betAmount > 6) {
       console.error("Invalid betAmount:", betAmount);
       return;
-  }
+    }
 
-  // Lấy prefab tương ứng với betAmount
-  const prefab = this.prefabs[betAmount - 1];
+    // Lấy prefab tương ứng với betAmount
+    const prefab = this.prefabs[betAmount - 1];
     const spriteNode = instantiate(prefab);
     spriteNode.scale = new Vec3(0.5, 0.5);
     let v3 = new Vec3();
     let PosTarget;
-    
+
     // Kiểm tra nếu sessionId trùng khớp với label nào đó
     for (let i = 0; i < this.ListLabel.length; i++) {
       if (sessionId === this.ListLabel[i].string) {
         // Thêm node mới làm con của node có label tương ứng
         if (this.UserBet === "Dragon") {
           PosTarget = this.DragonNode;
-          this.parentNodeChip=this.ChipParent[0]
+          this.parentNodeChip = this.ChipParent[0];
         } else if (this.UserBet === "Tiger") {
           PosTarget = this.TigerNode;
-          this.parentNodeChip=this.ChipParent[1]
+          this.parentNodeChip = this.ChipParent[1];
         } else {
           PosTarget = this.TieNode;
-          this.parentNodeChip=this.ChipParent[2]
+          this.parentNodeChip = this.ChipParent[2];
         }
         this.ListLabel[i].node.addChild(spriteNode);
         this.ListLabel[i].node.inverseTransformPoint(
           v3,
           PosTarget.worldPosition
         );
-        tween(spriteNode)
-          .to(0.3, { position: v3 })
-          .start();
-        break; 
-        }
+        tween(spriteNode).to(0.3, { position: v3 }).start();
+        break;
+      }
     }
   }
 
@@ -310,8 +337,9 @@ export class NetworkConnect extends Component {
 
     // Lặp qua danh sách người chiến thắng và tạo nút trả tiền cho mỗi người chiến thắng
     for (let i = 0; i < winnerList.length; i++) {
-    
-      const winner =  this.room.state.players.get(winnerList[i].sessionId).displayName; 
+      const winner = this.room.state.players.get(
+        winnerList[i].sessionId
+      ).displayName;
 
       // Tìm node tương ứng với người chiến thắng
       const winnerNode = this.findWinnerNode(winner);
@@ -327,8 +355,6 @@ export class NetworkConnect extends Component {
   private winAnimPlus(winid) {
     for (let i = 0; i < winid.length; i++) {
       if (winid[i].sessionId === this.room.sessionId) {
-        console.log("Price:", winid[i].price);
-
         this.CoinWinAni.string = "+" + winid[i].price.toString();
         this.CoinWinAni.node.active = true;
         this.CoinWinAni.node.getComponent(Animation).play();

@@ -369,8 +369,6 @@ export class GameController extends Component {
         this.sessionId = this.NetworkConnect.room.state.players.get(
           this.NetworkConnect.room.sessionId
         );
-        console.log(this.sessionId);
-
         this.assignUserName = true;
       }
 
@@ -390,11 +388,38 @@ export class GameController extends Component {
       this.NetworkConnect.room &&
       this.NetworkConnect.room.sessionId !== undefined
     ) {
-      this.UserName.string = this.sessionId.displayName;
+      const player = this.NetworkConnect.room.state.players.get(
+        this.NetworkConnect.room.sessionId
+      );
+      if (player && player.displayName) {
+        this.UserName.string = player.displayName;
+      } else {
+        console.warn(
+          `Display name not found for sessionId ${this.NetworkConnect.room.sessionId}`
+        );
+      }
     }
-    this.currentHostName = this.NetworkConnect.room.state.players.get(
-      this.NetworkConnect.currentHost
-    ).displayName;
+    if (
+      this.NetworkConnect &&
+      this.NetworkConnect.room &&
+      this.NetworkConnect.room.state &&
+      this.NetworkConnect.room.state.players
+    ) {
+      const player = this.NetworkConnect.room.state.players.get(
+        this.NetworkConnect.currentHost
+      );
+      if (player && player.displayName) {
+        this.currentHostName = player.displayName;
+      } else {
+        console.warn(
+          `Display name not found for currentHost ${this.NetworkConnect.currentHost}`
+        );
+      }
+    } else {
+      console.error(
+        "NetworkConnect or its properties are not properly initialized."
+      );
+    }
     if (
       this.NetworkConnect.room &&
       this.NetworkConnect.room.sessionId === this.NetworkConnect.currentHost
@@ -415,8 +440,8 @@ export class GameController extends Component {
     ) {
       this.NetworkConnect.room.send("getHistories");
       this.NetworkConnect.room.onMessage("histories", (message) => {
-        console.log("History", message.documents[0].result);
-        console.log("History", message.documents[0].result2);
+        // console.log("History", message.documents[0].result);
+        // console.log("History", message.documents[0].result2);
         this.createGridNot(message.documents);
       });
       this.RestartBalnce();
@@ -628,8 +653,6 @@ export class GameController extends Component {
         const cardList: SpriteFrame[] | undefined =
           suitToResourceMap[message.dragonCard.suit];
         if (cardList) {
-          console.log(message.dragonCard.suit);
-
           this.spriteFrame = cardList[message.dragonCard.value - 1];
         } else {
           console.error("Unknown suit:", message.dragonCard.suit);
@@ -641,7 +664,6 @@ export class GameController extends Component {
         if (spriteComponent) {
           // Gán trực tiếp spriteFrame cho component Sprite
           spriteComponent.spriteFrame = this.spriteFrame;
-          console.log("SpriteFrame đã được gán");
         } else {
           console.error("Component Sprite bị thiếu trên CardNodeL!");
         }
@@ -830,9 +852,6 @@ export class GameController extends Component {
         const spriteComponent = spriteNode.addComponent(Sprite);
         spriteComponent.spriteFrame = buttonSpriteFrame;
         posNode.addChild(spriteNode);
-        console.log("chaaaaa",spriteNode.parent);
-        
-        console.log("da chayyyyyyyyyyyyyyyyyy", buttonSpriteFrame);
         // Bắt đầu tween animation sau khi spriteNode đã được thêm vào posNode
         tween(spriteNode)
           .to(0.3, { position: new Vec3(posX, posY) })
@@ -1061,8 +1080,7 @@ export class GameController extends Component {
   private CancelBetTiger() {
     if (this.GameEnd === false) {
       this.NetworkConnect.room.send("cancel");
-      console.log("cancel");
-      
+
       this.checkBettedTiger = false;
       this.ToatalUser[2].active = false;
       this.listCancelBet[1].node.active = false;
@@ -1096,9 +1114,7 @@ export class GameController extends Component {
   private CancelBetTie() {
     if (this.GameEnd === false) {
       this.NetworkConnect.room.send("cancel");
-      this.NetworkConnect.room.onMessage("cancel", (message) => {
-        console.log("Candỷush", message);
-      });
+      this.NetworkConnect.room.onMessage("cancel", (message) => {});
       this.checkBettedTie = false;
       this.ToatalUser[1].active = false;
       this.listCancelBet[2].node.active = false;
@@ -1249,10 +1265,7 @@ export class GameController extends Component {
   private shownResult() {
     this.NetworkConnect.room.onMessage(
       "result",
-      (message: { dragonCard: { suit: string; value: number } }) => {
-        console.log(message.dragonCard.value);
-        console.log(message.dragonCard.suit);
-      }
+      (message: { dragonCard: { suit: string; value: number } }) => {}
     );
     tween(this.CardNodeL)
       .to(0.4, {
@@ -1263,7 +1276,6 @@ export class GameController extends Component {
       })
       .call(() => {
         this.displayImages();
-        console.log("cos chay kgonggggggg");
       })
       .start();
 

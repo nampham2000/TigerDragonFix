@@ -12,6 +12,7 @@ import {
   Animation,
   director,
   EditBox,
+  Button,
 } from "cc";
 const { ccclass, property } = _decorator;
 import Colyseus from "db://colyseus-sdk/colyseus.js";
@@ -51,6 +52,27 @@ export class NetworkConnect extends Component {
 
   @property(Animation)
   private loadingAnimProject: Animation = null;
+
+  @property(Node)
+  private ResTable: Node;
+
+  @property(Node)
+  private ResBtnTb: Node;
+
+  @property(Animation)
+  private WarnRes: Animation;
+
+  @property(Animation)
+  private WarnEmail: Animation;
+
+  @property(Button)
+  private LoginBtn: Button;
+
+  @property(Button)
+  private ResBtn: Button;
+
+  @property(Button)
+  private LoginBtnactive: Button;
 
   // @property({
   //   type: Chip,
@@ -93,6 +115,10 @@ export class NetworkConnect extends Component {
   }
 
   private async Signup(email: string, password: string, name: string) {
+    if (!email || !password || !name) {
+      this.WarnEmail.play("WarningEmail");
+      return;
+    }
     try {
       // Gửi thông tin đăng nhập đến phòng Colyseus
       let response = await fetch(
@@ -113,6 +139,11 @@ export class NetworkConnect extends Component {
           }),
         }
       );
+      if (this.ResTable && this.ResBtnTb) {
+        this.ResTable.active = false;
+        this.ResBtnTb.active = false;
+        this.WarnRes.play();
+      }
     } catch (error) {
       console.error("Error:", error);
       this.showErrorMessage("Incorrect email or password");
@@ -141,6 +172,10 @@ export class NetworkConnect extends Component {
     const username = this.boxNameLogin.string;
     const password = this.boxPassLogin.string;
     this.login(username, password);
+    this.LoginBtnactive.node.active = true;
+    setTimeout(() => {
+      this.LoginBtnactive.node.active = false;
+    }, 3000);
   }
 
   private signUp(email: string, password: string, name: string) {
@@ -148,6 +183,10 @@ export class NetworkConnect extends Component {
     password = this.boxPassRes.string;
     name = this.boxRePassRes.string;
     this.Signup(email, password, name);
+    this.ResBtn.node.active = true;
+    setTimeout(() => {
+      this.ResBtn.node.active = false;
+    }, 3000);
   }
 
   // Phương thức để xử lý kết quả đăng nhập từ server
@@ -173,7 +212,6 @@ export class NetworkConnect extends Component {
       this.loadingAnimProject.play();
       this.moveToGameScene();
     } else {
-      console.log("rong"); 
     }
     // this.connect();
   }
