@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, Animation, director, EditBox, Button, Colyseus, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _crd, ccclass, property, loggedInUserSession, NetworkConnect;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Label, Node, Animation, director, EditBox, Button, Colyseus, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _crd, ccclass, property, loggedInUserSession, NetworkConnect;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -26,6 +26,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
       _decorator = _cc._decorator;
       Component = _cc.Component;
+      Label = _cc.Label;
       Node = _cc.Node;
       Animation = _cc.Animation;
       director = _cc.director;
@@ -55,7 +56,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         type: Number
       }), _dec4 = property({
         type: Boolean
-      }), _dec5 = property(EditBox), _dec6 = property(EditBox), _dec7 = property(EditBox), _dec8 = property(EditBox), _dec9 = property(EditBox), _dec10 = property(Node), _dec11 = property(Animation), _dec12 = property(Node), _dec13 = property(Node), _dec14 = property(Animation), _dec15 = property(Animation), _dec16 = property(Button), _dec17 = property(Button), _dec18 = property(Button), _dec(_class = (_class2 = class NetworkConnect extends Component {
+      }), _dec5 = property(EditBox), _dec6 = property(EditBox), _dec7 = property(EditBox), _dec8 = property(EditBox), _dec9 = property(EditBox), _dec10 = property(Node), _dec11 = property(Animation), _dec12 = property(Node), _dec13 = property(Node), _dec14 = property(Animation), _dec15 = property(Animation), _dec16 = property(Button), _dec17 = property(Button), _dec18 = property(Button), _dec19 = property(Label), _dec(_class = (_class2 = class NetworkConnect extends Component {
         constructor() {
           super(...arguments);
 
@@ -93,6 +94,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           _initializerDefineProperty(this, "LoginBtnactive", _descriptor17, this);
 
+          _initializerDefineProperty(this, "warnLb", _descriptor18, this);
+
           // @property({
           //   type: Chip,
           // })
@@ -101,29 +104,68 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           this.room = void 0;
         }
 
+        // private async login(email: string, password: string) {
+        //   try {
+        //     //   // Gửi thông tin đăng nhập đến phòng Colyseus
+        //     let response = await fetch(
+        //       "https://adroit-appwrite.our-projects.org/v1/account/sessions/email",
+        //       {
+        //         method: "POST",
+        //         headers: {
+        //           "Access-Control-Allow-Origin": "*",
+        //           "Content-Type": "application/json",
+        //           "X-Appwrite-Response-Format": "1.5.0",
+        //           "X-Appwrite-Project": "game-provider",
+        //         },
+        //         body: JSON.stringify({
+        //           email,
+        //           password,
+        //         }),
+        //       }
+        //     );
+        //     let headers = response.headers;
+        //     const cookies = headers.get("x-fallback-cookies");
+        //     const cookiesObject = JSON.parse(cookies);
+        //     const sessionValue = cookiesObject["a_session_game-provider"];
+        //     console.log(cookiesObject);
+        //     localStorage.setItem("Token", sessionValue);
+        //     this.LoadingPageProcess.active = true;
+        //     this.loadingAnimProject.play();
+        //     this.moveToGameScene();
+        //   } catch (error) {
+        //     console.error("Error:", error);
+        //     this.showErrorMessage("Incorrect email or password");
+        //   }
+        // }
         login(email, password) {
           var _this = this;
 
           return _asyncToGenerator(function* () {
             try {
-              //   // Gửi thông tin đăng nhập đến phòng Colyseus
+              // Gửi thông tin đăng nhập đến phòng Colyseus
               var response = yield fetch("https://adroit-appwrite.our-projects.org/v1/account/sessions/email", {
                 method: "POST",
                 headers: {
                   "Access-Control-Allow-Origin": "*",
                   "Content-Type": "application/json",
                   "X-Appwrite-Response-Format": "1.5.0",
-                  "X-Appwrite-Project": "6604076a003c15f4a892"
+                  "X-Appwrite-Project": "game-provider"
                 },
                 body: JSON.stringify({
                   email,
                   password
                 })
               });
+
+              if (!response.ok) {
+                throw new Error("Incorrect username or password");
+              }
+
               var headers = response.headers;
               var cookies = headers.get("x-fallback-cookies");
               var cookiesObject = JSON.parse(cookies);
-              var sessionValue = cookiesObject["a_session_6604076a003c15f4a892"];
+              var sessionValue = cookiesObject["a_session_game-provider"];
+              console.log(cookiesObject);
               localStorage.setItem("Token", sessionValue);
               _this.LoadingPageProcess.active = true;
 
@@ -132,8 +174,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
               _this.moveToGameScene();
             } catch (error) {
               console.error("Error:", error);
-
-              _this.showErrorMessage("Incorrect email or password");
+              throw new Error("Incorrect username or password");
             }
           })();
         }
@@ -156,7 +197,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
                   "Access-Control-Allow-Origin": "*",
                   "Content-Type": "application/json",
                   "X-Appwrite-Response-Format": "1.5.0",
-                  "X-Appwrite-Project": "6604076a003c15f4a892"
+                  "X-Appwrite-Project": "game-provider"
                 },
                 body: JSON.stringify({
                   userId: _this2.generateUUID(),
@@ -166,16 +207,22 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
                 })
               });
 
-              if (_this2.ResTable && _this2.ResBtnTb) {
-                _this2.ResTable.active = false;
-                _this2.ResBtnTb.active = false;
+              if (response.ok) {
+                if (_this2.ResTable && _this2.ResBtnTb) {
+                  _this2.ResTable.active = false;
+                  _this2.ResBtnTb.active = false;
 
-                _this2.WarnRes.play();
+                  _this2.WarnRes.play();
+                }
+              } else {
+                _this2.warnLb.string = "Account already exists";
+
+                _this2.WarnEmail.play();
               }
             } catch (error) {
-              console.error("Error:", error);
+              _this2.warnLb.string = "Account already exists";
 
-              _this2.showErrorMessage("Incorrect email or password");
+              _this2.WarnEmail.play();
             }
           })();
         }
@@ -200,8 +247,25 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
         loginBtn() {
           var username = this.boxNameLogin.string;
-          var password = this.boxPassLogin.string;
-          this.login(username, password);
+          var password = this.boxPassLogin.string; // Kiểm tra username và password không được để trống
+
+          if (!username) {
+            this.warnLb.string = " Email, password must not be empty";
+            this.WarnEmail.play();
+            return;
+          }
+
+          if (!password) {
+            this.warnLb.string = " Email, password must not be empty";
+            this.WarnEmail.play();
+            return;
+          } // Thực hiện đăng nhập
+
+
+          this.login(username, password).catch(error => {
+            this.warnLb.string = "Incorrect username or password";
+            this.WarnEmail.play();
+          });
           this.LoginBtnactive.node.active = true;
           setTimeout(() => {
             this.LoginBtnactive.node.active = false;
@@ -212,11 +276,50 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           email = this.boxNameRes.string;
           password = this.boxPassRes.string;
           name = this.boxRePassRes.string;
+
+          if (!email) {
+            this.warnLb.string = " Email, password, and name must not be empty";
+            this.WarnEmail.play();
+            return;
+          }
+
+          if (!password) {
+            this.warnLb.string = " Email, password, and name must not be empty";
+            this.WarnEmail.play();
+            return;
+          }
+
+          if (!name) {
+            this.warnLb.string = " Email, password, and name must not be empty";
+            this.WarnEmail.play();
+            return;
+          } // Kiểm tra email hợp lệ
+
+
+          if (!this.isValidEmail(email)) {
+            this.warnLb.string = "Invalid email address";
+            this.WarnEmail.play();
+            return;
+          } // Kiểm tra độ dài mật khẩu
+
+
+          if (password.length < 8) {
+            this.warnLb.string = "Password must be at least 8 characters long";
+            this.WarnEmail.play();
+            return;
+          } // Thực hiện đăng ký
+
+
           this.Signup(email, password, name);
           this.ResBtn.node.active = true;
           setTimeout(() => {
             this.ResBtn.node.active = false;
           }, 3000);
+        }
+
+        isValidEmail(email) {
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailPattern.test(email);
         } // Phương thức để xử lý kết quả đăng nhập từ server
         // private handleLoginResponse(response: any) {
         //   if (response.success) {
@@ -385,6 +488,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         writable: true,
         initializer: null
       }), _descriptor17 = _applyDecoratedDescriptor(_class2.prototype, "LoginBtnactive", [_dec18], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor18 = _applyDecoratedDescriptor(_class2.prototype, "warnLb", [_dec19], {
         configurable: true,
         enumerable: true,
         writable: true,

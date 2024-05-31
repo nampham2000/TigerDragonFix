@@ -135,7 +135,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.TotalUser = void 0;
           this.UserBet = void 0;
           this.NotmeBet = void 0;
-          this.result = void 0;
+          // result;
           this.winner = void 0;
           this.currentHost = void 0;
           this.balanceUser = void 0;
@@ -165,7 +165,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
         async connect() {
           try {
-            this.client.auth.token = localStorage.getItem("Token"); // this.room = await this.client.joinOrCreate("room1");
+            this.client.auth.token = localStorage.getItem("Token");
+            console.log(this.client.auth.token); // this.room = await this.client.joinOrCreate("room1");
 
             const rooms = await this.client.getAvailableRooms("room1");
 
@@ -212,11 +213,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                   this.ListLabel[i].node.removeAllChildren();
                 }
               }
-            });
-            this.room.onMessage("result", message => {
-              // console.log(message.result);
-              this.result = message.result;
-            });
+            }); // this.room.onMessage("result", (message) => {
+            //   // console.log(message.result);
+            //   this.dragonReuslt = message.dragonCard.value;
+            //   this.tigerResult = message.tigerCard.value;
+            //   console.log("Roong", this.dragonReuslt);
+            //   console.log("HO", this.tigerResult);
+            //   this.result = message.result;
+            // });
+
             this.room.onMessage("userBet", message => {
               console.log(message.betAmount);
               this.namePlayer = this.room.state.players.get(message.playerID);
@@ -247,6 +252,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
               this.currentHost = state.currentHostId;
               const players = [...state.players.values()];
+              console.log("player List:........", players);
               this.updatePlayerList(players); // console.log("PlayerStatus", players[0].isHost);
 
               this.TotalUser = players.length;
@@ -267,6 +273,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }]; // // Lấy từng giá trị value từ
 
           const list = playerList[0];
+          console.log("Listtttttt:", list);
           const numElements = list.length;
           this.ListL.forEach(node => {
             node.active = false;
@@ -274,6 +281,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           list.forEach((value, key) => {
             if (value.sessionId !== this.room.sessionId && value.sessionId !== this.currentHost) {
               const nameUser = value.displayName;
+              console.log("Hostttttttttttt:", value.isHost);
 
               if (nameUser) {
                 // Check if nameUser is defined

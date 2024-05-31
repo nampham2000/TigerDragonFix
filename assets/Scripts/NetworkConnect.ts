@@ -85,7 +85,7 @@ export class NetworkConnect extends Component {
   TotalUser;
   UserBet;
   NotmeBet;
-  result;
+  // result;
   winner;
   currentHost: any;
   balanceUser: any;
@@ -121,6 +121,8 @@ export class NetworkConnect extends Component {
   async connect() {
     try {
       this.client.auth.token = localStorage.getItem("Token");
+      console.log(this.client.auth.token);
+
       // this.room = await this.client.joinOrCreate("room1");
       const rooms = await this.client.getAvailableRooms("room1");
       if (rooms.length === 0) {
@@ -173,10 +175,15 @@ export class NetworkConnect extends Component {
         }
       });
 
-      this.room.onMessage("result", (message) => {
-        // console.log(message.result);
-        this.result = message.result;
-      });
+      // this.room.onMessage("result", (message) => {
+      //   // console.log(message.result);
+      //   this.dragonReuslt = message.dragonCard.value;
+      //   this.tigerResult = message.tigerCard.value;
+      //   console.log("Roong", this.dragonReuslt);
+      //   console.log("HO", this.tigerResult);
+
+      //   this.result = message.result;
+      // });
 
       this.room.onMessage("userBet", (message) => {
         console.log(message.betAmount);
@@ -213,6 +220,8 @@ export class NetworkConnect extends Component {
         // console.log(this.room.state);
         this.currentHost = state.currentHostId;
         const players = [...state.players.values()];
+        console.log("player List:........", players);
+
         this.updatePlayerList(players);
         // console.log("PlayerStatus", players[0].isHost);
         this.TotalUser = players.length;
@@ -238,6 +247,7 @@ export class NetworkConnect extends Component {
 
     // // Lấy từng giá trị value từ
     const list = playerList[0];
+    console.log("Listtttttt:", list);
 
     const numElements = list.length;
 
@@ -251,6 +261,8 @@ export class NetworkConnect extends Component {
         value.sessionId !== this.currentHost
       ) {
         const nameUser = value.displayName;
+        console.log("Hostttttttttttt:", value.isHost);
+
         if (nameUser) {
           // Check if nameUser is defined
           this.ListLabel[displayIndex].string = nameUser;

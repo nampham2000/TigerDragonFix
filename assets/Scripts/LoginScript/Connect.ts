@@ -74,6 +74,9 @@ export class NetworkConnect extends Component {
   @property(Button)
   private LoginBtnactive: Button;
 
+  @property(Label)
+  private warnLb: Label;
+
   // @property({
   //   type: Chip,
   // })
@@ -81,9 +84,43 @@ export class NetworkConnect extends Component {
 
   client!: Colyseus.Client;
   room!: Colyseus.Room;
+  // private async login(email: string, password: string) {
+  //   try {
+  //     //   // Gửi thông tin đăng nhập đến phòng Colyseus
+  //     let response = await fetch(
+  //       "https://adroit-appwrite.our-projects.org/v1/account/sessions/email",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Access-Control-Allow-Origin": "*",
+  //           "Content-Type": "application/json",
+  //           "X-Appwrite-Response-Format": "1.5.0",
+  //           "X-Appwrite-Project": "game-provider",
+  //         },
+  //         body: JSON.stringify({
+  //           email,
+  //           password,
+  //         }),
+  //       }
+  //     );
+  //     let headers = response.headers;
+  //     const cookies = headers.get("x-fallback-cookies");
+  //     const cookiesObject = JSON.parse(cookies);
+  //     const sessionValue = cookiesObject["a_session_game-provider"];
+  //     console.log(cookiesObject);
+
+  //     localStorage.setItem("Token", sessionValue);
+  //     this.LoadingPageProcess.active = true;
+  //     this.loadingAnimProject.play();
+  //     this.moveToGameScene();
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     this.showErrorMessage("Incorrect email or password");
+  //   }
+  // }
   private async login(email: string, password: string) {
     try {
-      //   // Gửi thông tin đăng nhập đến phòng Colyseus
+      // Gửi thông tin đăng nhập đến phòng Colyseus
       let response = await fetch(
         "https://adroit-appwrite.our-projects.org/v1/account/sessions/email",
         {
@@ -92,7 +129,7 @@ export class NetworkConnect extends Component {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
             "X-Appwrite-Response-Format": "1.5.0",
-            "X-Appwrite-Project": "6604076a003c15f4a892",
+            "X-Appwrite-Project": "game-provider",
           },
           body: JSON.stringify({
             email,
@@ -100,17 +137,24 @@ export class NetworkConnect extends Component {
           }),
         }
       );
+
+      if (!response.ok) {
+        throw new Error("Incorrect username or password");
+      }
+
       let headers = response.headers;
       const cookies = headers.get("x-fallback-cookies");
       const cookiesObject = JSON.parse(cookies);
-      const sessionValue = cookiesObject["a_session_6604076a003c15f4a892"];
+      const sessionValue = cookiesObject["a_session_game-provider"];
+      console.log(cookiesObject);
+
       localStorage.setItem("Token", sessionValue);
       this.LoadingPageProcess.active = true;
       this.loadingAnimProject.play();
       this.moveToGameScene();
     } catch (error) {
       console.error("Error:", error);
-      this.showErrorMessage("Incorrect email or password");
+      throw new Error("Incorrect username or password");
     }
   }
 
@@ -129,7 +173,7 @@ export class NetworkConnect extends Component {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
             "X-Appwrite-Response-Format": "1.5.0",
-            "X-Appwrite-Project": "6604076a003c15f4a892",
+            "X-Appwrite-Project": "game-provider",
           },
           body: JSON.stringify({
             userId: this.generateUUID(),
@@ -139,14 +183,20 @@ export class NetworkConnect extends Component {
           }),
         }
       );
-      if (this.ResTable && this.ResBtnTb) {
-        this.ResTable.active = false;
-        this.ResBtnTb.active = false;
-        this.WarnRes.play();
+
+      if (response.ok) {
+        if (this.ResTable && this.ResBtnTb) {
+          this.ResTable.active = false;
+          this.ResBtnTb.active = false;
+          this.WarnRes.play();
+        }
+      } else {
+        this.warnLb.string = "Account already exists";
+        this.WarnEmail.play();
       }
     } catch (error) {
-      console.error("Error:", error);
-      this.showErrorMessage("Incorrect email or password");
+      this.warnLb.string = "Account already exists";
+      this.WarnEmail.play();
     }
   }
   generateUUID() {
@@ -171,7 +221,26 @@ export class NetworkConnect extends Component {
   private loginBtn() {
     const username = this.boxNameLogin.string;
     const password = this.boxPassLogin.string;
-    this.login(username, password);
+
+    // Kiểm tra username và password không được để trống
+    if (!username) {
+      this.warnLb.string = " Email, password must not be empty";
+      this.WarnEmail.play();
+      return;
+    }
+
+    if (!password) {
+      this.warnLb.string = " Email, password must not be empty";
+      this.WarnEmail.play();
+      return;
+    }
+
+    // Thực hiện đăng nhập
+    this.login(username, password).catch((error: any) => {
+      this.warnLb.string = "Incorrect username or password";
+      this.WarnEmail.play();
+    });
+
     this.LoginBtnactive.node.active = true;
     setTimeout(() => {
       this.LoginBtnactive.node.active = false;
@@ -182,11 +251,48 @@ export class NetworkConnect extends Component {
     email = this.boxNameRes.string;
     password = this.boxPassRes.string;
     name = this.boxRePassRes.string;
+
+    if (!email) {
+      this.warnLb.string = " Email, password, and name must not be empty";
+      this.WarnEmail.play();
+      return;
+    }
+    if (!password) {
+      this.warnLb.string = " Email, password, and name must not be empty";
+      this.WarnEmail.play();
+      return;
+    }
+    if (!name) {
+      this.warnLb.string = " Email, password, and name must not be empty";
+      this.WarnEmail.play();
+      return;
+    }
+
+    // Kiểm tra email hợp lệ
+    if (!this.isValidEmail(email)) {
+      this.warnLb.string = "Invalid email address";
+      this.WarnEmail.play();
+      return;
+    }
+
+    // Kiểm tra độ dài mật khẩu
+    if (password.length < 8) {
+      this.warnLb.string = "Password must be at least 8 characters long";
+      this.WarnEmail.play();
+      return;
+    }
+
+    // Thực hiện đăng ký
     this.Signup(email, password, name);
     this.ResBtn.node.active = true;
     setTimeout(() => {
       this.ResBtn.node.active = false;
     }, 3000);
+  }
+
+  private isValidEmail(email: string): boolean {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
   }
 
   // Phương thức để xử lý kết quả đăng nhập từ server

@@ -172,6 +172,11 @@ export class GameController extends Component {
   private loadingPage: Node;
 
   @property({
+    type: Node,
+  })
+  private bgHost: Node;
+
+  @property({
     type: AudioSource,
   })
   private loadingAudio: AudioSource;
@@ -210,6 +215,11 @@ export class GameController extends Component {
     type: Animation,
   })
   private ExplosionDra: Animation;
+
+  @property({
+    type: Animation,
+  })
+  private hostAnim: Animation;
 
   @property({
     type: SpriteFrame,
@@ -333,6 +343,15 @@ export class GameController extends Component {
   private assignHostName: boolean = false;
   private spriteFrame;
   private spriteFrameR;
+  private cardSuit;
+  private cardValue;
+  private cardTigerSuit;
+  private cardTigerValue;
+  private cardImg = false;
+  private Tiewarn = false;
+  private result;
+  private host = false;
+
   log3;
   onLoad() {
     this.clonePosCardL = this.CardNodeL.position.clone();
@@ -358,12 +377,26 @@ export class GameController extends Component {
     this.drawRectangleTotal(1);
     this.drawRectangleTotal(2);
     this.AudioController.settingAudio(0);
+    this.cardSuit = "1";
+    this.cardTigerSuit = "1";
   }
 
   update(deltaTime: number) {
-    // this.BalancerLb.string = this.NetworkConnect.TotalBalanceUser;
-    // console.log(this.NetworkConnect.TotalBalanceUser);
-    // this.NetworkConnect.room.balance
+    if (this.cardImg === false) {
+      this.NetworkConnect.room.onMessage("result", (message) => {
+        console.log(message.result);
+        this.cardTigerSuit = message.dragonCard.suit;
+        this.cardTigerSuit = message.tigerCard.suit;
+        this.cardValue = message.dragonCard.value;
+        this.cardTigerValue = message.tigerCard.value;
+        this.result = message.result;
+        // this.cardImg = true;
+        this.displayImages();
+        this.displayImagesCardR();
+      });
+
+      // Đặt cờ để biết rằng sự kiện đã được thiết lập
+    }
     if (this.NetworkConnect.balanceUser) {
       if (this.assignUserName === false) {
         this.sessionId = this.NetworkConnect.room.state.players.get(
@@ -438,11 +471,29 @@ export class GameController extends Component {
       this.NetworkConnect.gameState === "idle" &&
       this.GameStateIdle === false
     ) {
+      if (
+        this.NetworkConnect.room &&
+        this.NetworkConnect.room.sessionId === this.NetworkConnect.currentHost
+      ) {
+        if (this.host === false) {
+          this.bgHost.active = true;
+          this.hostAnim.play();
+          setTimeout(() => {
+            this.bgHost.active = false;
+          }, 1730);
+          // this.hostAnim.node.active = true;
+          this.hostAnim.on(Animation.EventType.FINISHED, () => {
+            // this.hostAnim.node.active = false;
+          });
+          this.host = true;
+        }
+      }
       this.NetworkConnect.room.send("getHistories");
       this.NetworkConnect.room.onMessage("histories", (message) => {
         // console.log("History", message.documents[0].result);
         // console.log("History", message.documents[0].result2);
         this.createGridNot(message.documents);
+        this.createGrid(message.documents);
       });
       this.RestartBalnce();
       this.checkSateCurrent = true;
@@ -453,6 +504,8 @@ export class GameController extends Component {
       this.GameStateReuslt = false;
       this.GameStateFight = false;
       this.GameStateStopBet = false;
+      this.Tiewarn = false;
+      // this.cardImg = false;
     }
     if (this.NetworkConnect.gameState === "startBetting") {
       this.CardNodeAnim.node.active = false;
@@ -471,7 +524,20 @@ export class GameController extends Component {
       this.NetworkConnect.room.onMessage("histories", (message) => {
         console.log("History", message.documents[0].result);
         this.createGridNot(message.documents);
+        this.createGrid(message.documents);
       });
+      // if (this.host === false) {
+      //   this.bgHost.active = true;
+      //   this.hostAnim.play();
+      //   setTimeout(() => {
+      //     this.bgHost.active = false;
+      //   }, 1730);
+      //   this.hostAnim.node.active = true;
+      //   this.hostAnim.on(Animation.EventType.FINISHED, () => {
+      //     // this.hostAnim.node.active = false;
+      //   });
+      //   this.host = true;
+      // }
       this.GameStateStart = true;
     }
 
@@ -586,8 +652,6 @@ export class GameController extends Component {
         this.listCancelBet[3].node.active = true;
         this.createSpriteNode(-951, 193, this.ValueAnim1);
       }
-
-      this.PosBet();
       this.AudioController.onAudio(8);
     }
   }
@@ -647,28 +711,28 @@ export class GameController extends Component {
       "3": this.listCardResdiamonds,
     };
 
-    this.NetworkConnect.room.onMessage(
-      "result",
-      (message: { dragonCard: { suit: string; value: number } }) => {
-        const cardList: SpriteFrame[] | undefined =
-          suitToResourceMap[message.dragonCard.suit];
-        if (cardList) {
-          this.spriteFrame = cardList[message.dragonCard.value - 1];
-        } else {
-          console.error("Unknown suit:", message.dragonCard.suit);
-          return;
-        }
+    // this.NetworkConnect.room.onMessage(
+    //   "result",
+    //   (message: { dragonCard: { suit: string; value: number } }) => {
+    const cardList: SpriteFrame[] | undefined =
+      suitToResourceMap[this.cardSuit];
+    if (cardList) {
+      this.spriteFrame = cardList[this.cardValue - 1];
+    } else {
+      console.error("Unknown suit:", this.cardSuit);
+      return;
+    }
 
-        // Lấy component Sprite từ CardNodeL
-        const spriteComponent = this.CardNodeL.getComponent(Sprite);
-        if (spriteComponent) {
-          // Gán trực tiếp spriteFrame cho component Sprite
-          spriteComponent.spriteFrame = this.spriteFrame;
-        } else {
-          console.error("Component Sprite bị thiếu trên CardNodeL!");
-        }
-      }
-    );
+    // Lấy component Sprite từ CardNodeL
+    const spriteComponent = this.CardNodeL.getComponent(Sprite);
+    if (spriteComponent) {
+      // Gán trực tiếp spriteFrame cho component Sprite
+      spriteComponent.spriteFrame = this.spriteFrame;
+    } else {
+      console.error("Component Sprite bị thiếu trên CardNodeL!");
+    }
+    //   }
+    // );
   }
 
   private displayImagesCardR() {
@@ -678,26 +742,69 @@ export class GameController extends Component {
       "2": this.listCardResclubs,
       "3": this.listCardResdiamonds,
     };
-    this.NetworkConnect.room.onMessage(
-      "result",
-      (message: { tigerCard: { suit: string; value: number } }) => {
-        const cardList: SpriteFrame[] | undefined =
-          suitToResourceMap[message.tigerCard.suit];
-        if (cardList) {
-          this.spriteFrameR = cardList[message.tigerCard.value - 1];
-        } else {
-          console.error("Unknown suit:", message.tigerCard.suit);
-          return;
-        }
-        const sprite = this.CardNodeR.getComponent(Sprite);
-        if (sprite && this.spriteFrameR) {
-          sprite.spriteFrame = this.spriteFrameR;
-        } else {
-          console.error("Sprite or SpriteFrame is missing!");
-        }
-      }
-    );
+    // this.NetworkConnect.room.onMessage(
+    //   "result",
+    //   (message: { tigerCard: { suit: string; value: number } }) => {
+    //     console.log("aaaaaaaaaaaaaa");
+    // if (this.cardTigerValue !== undefined) {
+    //   this.cardTigerValue = this.NetworkConnect.tigerResult;
+    // }
+    console.log(this.cardTigerValue);
+    // if (this.cardTigerValue === undefined) {
+    //   this.cardTigerValue = this.NetworkConnect.tigerResult;
+    // }
+    const cardList: SpriteFrame[] | undefined =
+      suitToResourceMap[this.cardTigerSuit];
+    if (cardList) {
+      this.spriteFrameR = cardList[this.cardTigerValue - 1];
+    } else {
+      console.error("Unknown suit:", this.cardTigerSuit);
+      return;
+    }
+    const sprite = this.CardNodeR.getComponent(Sprite);
+    if (sprite && this.spriteFrameR) {
+      sprite.spriteFrame = this.spriteFrameR;
+    } else {
+      console.error("Sprite or SpriteFrame is missing!");
+    }
+    //   }
+    // );
   }
+
+  // private displayImagesCardR() {
+  //   const suitToResourceMap: { [key: string]: SpriteFrame[] } = {
+  //     "1": this.listCardRes,
+  //     "4": this.listCardResHeart,
+  //     "2": this.listCardResclubs,
+  //     "3": this.listCardResdiamonds,
+  //   };
+  //   console.log("aaaaaaaaaaaaaaaaaaa");
+
+  //   this.NetworkConnect.room.onMessage(
+  //     "result",
+  //     (message: { tigerCard: { suit: string; value: number } }) => {
+  //       console.log("Received message:", message);
+
+  //       const cardList: SpriteFrame[] | undefined =
+  //         suitToResourceMap[message.tigerCard.suit];
+  //       if (cardList) {
+  //         this.spriteFrameR = cardList[message.tigerCard.value - 1];
+  //         console.log("SpriteFrame selected:", this.spriteFrameR);
+  //       } else {
+  //         console.error("Unknown suit:", message.tigerCard.suit);
+  //         return;
+  //       }
+
+  //       const sprite = this.CardNodeR.getComponent(Sprite);
+  //       if (sprite && this.spriteFrameR) {
+  //         sprite.spriteFrame = this.spriteFrameR;
+  //         console.log("Sprite frame set successfully.");
+  //       } else {
+  //         console.error("Sprite or SpriteFrame is missing!");
+  //       }
+  //     }
+  //   );
+  // }
 
   drawRectangle() {
     const width: number = 250;
@@ -902,81 +1009,138 @@ export class GameController extends Component {
     graphics.fill();
   }
 
-  private createGrid() {
-    let prefabType;
-    if (this.NetworkConnect.result === "Tie") {
-      prefabType = this.Tie;
-    } else if (this.NetworkConnect.result === "tigerWin") {
-      prefabType = this.Under;
-    } else if (this.NetworkConnect.result === "dragonWin") {
-      prefabType = this.Over;
-    }
+  // private createGrid(documents: Document[]) {
+  //   let prefabType;
+  //   // if (this.NetworkConnect.result === "Tie") {
+  //   //   prefabType = this.Tie;
+  //   // } else if (this.NetworkConnect.result === "tigerWin") {
+  //   //   prefabType = this.Under;
+  //   // } else if (this.NetworkConnect.result === "dragonWin") {
+  //   //   prefabType = this.Over;
+  //   // }
+  //   // if (this.result === "Tie") {
+  //   //   prefabType = this.Tie;
+  //   // } else if (this.result === "tigerWin") {
+  //   //   prefabType = this.Under;
+  //   // } else if (this.result === "dragonWin") {
+  //   //   prefabType = this.Over;
+  //   // }
+  //   const prefabMap: { [key: string]: any } = {
+  //     TigerWin: this.Under,
+  //     DragonWin: this.Over,
+  //     Tie: this.Tie,
+  //   };
 
-    if (
-      this.currentRowClone > 5 &&
-      prefabType.name !== this.previousPrefabType.name
-    ) {
-      this.currentCol++;
-      // this.currentRow = 0;
-      if (this.currentCol >= this.numCols) {
-        this.clearGrid();
-        this.currentCol = 0;
+  //   this.clearGridNt();
+  //   this.currentRowL = 0;
+  //   this.currentColL = 0;
+  //   for (const doc of documents[0].result) {
+  //     const prefabType = prefabMap[doc];
+  //     if (prefabType) {
+  //       if (
+  //         this.previousPrefabType !== null &&
+  //         prefabType.name !== this.previousPrefabType.name
+  //       ) {
+  //         this.currentCol++;
+  //         this.currentRow = 0;
+  //         this.currentRowClone = 0;
+  //         if (this.currentCol >= this.numCols) {
+  //           this.clearGrid();
+  //           this.currentCol = 0;
+  //         }
+  //       }
+  //       const cell = instantiate(prefabType);
+  //       const posX = this.currentCol * this.cellWidth;
+  //       const posY = -this.currentRow * this.cellHeight;
+  //       cell.position = new Vec3(posX, posY);
+  //       this.pref.addChild(cell);
+  //       this.previousPrefabType = prefabType;
+  //       this.currentRowClone++;
+  //       if (this.currentRow < 5) {
+  //         this.currentRow++;
+  //       }
+  //       // console.log("col", this.currentCol);
+  //     } else {
+  //       console.error(`Prefab type not found for result: ${doc}`);
+  //     }
+  //   }
+
+  //   // if (
+  //   //   this.previousPrefabType !== null &&
+  //   //   prefabType.name !== this.previousPrefabType.name
+  //   // ) {
+  //   //   this.currentCol++;
+  //   //   this.currentRow = 0;
+  //   //   this.currentRowClone = 0;
+  //   //   if (this.currentCol >= this.numCols) {
+  //   //     this.clearGrid();
+  //   //     this.currentCol = 0;
+  //   //   }
+  //   // }
+
+  //   // const cell = instantiate(prefabType);
+  //   // const posX = this.currentCol * this.cellWidth;
+  //   // const posY = -this.currentRow * this.cellHeight;
+  //   // cell.position = new Vec3(posX, posY);
+  //   // this.pref.addChild(cell);
+
+  //   // this.previousPrefabType = prefabType;
+  //   // this.currentRowClone++;
+  //   // if (this.currentRow < 5) {
+  //   //   this.currentRow++;
+  //   // }
+  // }
+
+  // private clearGrid() {
+  //   this.pref.removeAllChildren();
+  // }
+
+  private createGrid(documents: Document[]) {
+    // Ánh xạ các giá trị với prefab tương ứng
+    const prefabMap: { [key: string]: any } = {
+      TigerWin: this.Under,
+      DragonWin: this.Over,
+      Tie: this.Tie,
+    };
+
+    this.clearGrid();
+    this.currentRow = 0;
+    this.currentCol = 0;
+    let previousResult = null;
+
+    for (const doc of documents[0].result) {
+      const prefabType = prefabMap[doc];
+      if (prefabType) {
+        if (previousResult !== null && doc !== previousResult) {
+          this.currentCol++;
+          this.currentRow = 0;
+        } else if (this.currentRow >= this.numRows) {
+          // If the current column is full and the result is the same as previous
+          this.currentCol++;
+          this.currentRow = this.numRows - 1;
+        }
+
+        if (this.currentCol >= this.numCols) {
+          this.clearGrid();
+          this.currentCol = 0;
+        }
+
+        const cell = instantiate(prefabType);
+        const posX = this.currentCol * this.cellWidth;
+        const posY = -this.currentRow * this.cellHeight;
+        cell.position = new Vec3(posX, posY);
+        this.pref.addChild(cell);
+        this.currentRow++;
+        previousResult = doc;
+      } else {
+        console.error(`Prefab type not found for result: ${doc}`);
       }
-    }
-    if (
-      this.previousPrefabType !== null &&
-      prefabType.name !== this.previousPrefabType.name
-    ) {
-      this.currentCol++;
-      this.currentRow = 0;
-      this.currentRowClone = 0;
-      if (this.currentCol >= this.numCols) {
-        this.clearGrid();
-        this.currentCol = 0;
-      }
-    }
-
-    const cell = instantiate(prefabType);
-    const posX = this.currentCol * this.cellWidth;
-    const posY = -this.currentRow * this.cellHeight;
-    cell.position = new Vec3(posX, posY);
-    this.pref.addChild(cell);
-
-    this.previousPrefabType = prefabType;
-    this.currentRowClone++;
-    if (this.currentRow < 5) {
-      this.currentRow++;
     }
   }
 
   private clearGrid() {
     this.pref.removeAllChildren();
   }
-
-  // private createGridNot() {
-  //   let prefabType;
-  //   if (this.NetworkConnect.result === "Tie") {
-  //     prefabType = this.Tie;
-  //   } else if (this.NetworkConnect.result === "tigerWin") {
-  //     prefabType = this.Under;
-  //   } else if (this.NetworkConnect.result === "dragonWin") {
-  //     prefabType = this.Over;
-  //   }
-  //   if (this.currentRowL >= this.numRows) {
-  //     this.currentColL++;
-  //     this.currentRowL = 0;
-  //     if (this.currentColL >= this.numCols) {
-  //       this.clearGridNt();
-  //       this.currentCol = 0;
-  //     }
-  //   }
-  //   const cell = instantiate(prefabType);
-  //   const posX = this.currentColL * this.cellWidth; // Tính vị trí x dựa trên chỉ mục cột hiện tại
-  //   const posY = -this.currentRowL * this.cellHeight; // Tính vị trí y dựa trên chỉ mục hàng hiện tại
-  //   cell.position = new Vec3(posX, posY);
-  //   this.prefL.addChild(cell);
-  //   this.currentRowL++;
-  // }
 
   private createGridNot(documents: Document[]) {
     // Ánh xạ các giá trị với prefab tương ứng
@@ -988,8 +1152,6 @@ export class GameController extends Component {
     this.clearGridNt();
     this.currentRowL = 0;
     this.currentColL = 0;
-    // this.currentCol = 0;
-    // this.currentRowL = 0;
     for (const doc of documents[0].result) {
       const prefabType = prefabMap[doc];
       if (prefabType) {
@@ -1177,120 +1339,127 @@ export class GameController extends Component {
     this.AudioController.onAudio(2);
     this.GameEnd = true;
   }
-  private PosBet() {}
 
   private fight() {
-    if (this.NetworkConnect.result === "tigerWin") {
-      this.balanceUser = this.balanceUser + this.UserBetTigerIcon * 2;
-      this.BalancerLb.string = this.balanceUser.toString();
-      this.WinNotice.play("TigerWin");
-      this.DragonWinintro.play("TigerIntro");
-      this.winIntroType = "TigerIntro";
-      this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
-        if (this.winIntroType === "TigerIntro") {
-          this.TigerNode.play("TigerAttack");
-          this.TigerNode.on(Animation.EventType.FINISHED, () => {
-            this.DragonNode.play("DragonHurt");
-            this.DragonNode.on(Animation.EventType.FINISHED, () => {
-              this.DragonNode.play("DragonIde");
-              this.tweenChildrenToPosition(
-                this.ValueAnim,
-                new Vec3(30, 560),
-                0.5
-              );
-              this.tweenChildrenToPosition(
-                this.ValueAnim1,
-                new Vec3(30, 560),
-                0.5
-              );
-              this.tweenChildrenToPosition(
-                this.ValueAnim2,
-                new Vec3(30, 560),
-                0.5
-              );
-            });
-
-            this.TigerNode.play("TigerIde");
-            this.TigerNode.off(Animation.EventType.FINISHED);
-          });
-        }
-      });
-    }
-    if (this.NetworkConnect.result === "dragonWin") {
-      this.balanceUser = this.balanceUser + this.UserBetDragonIcon * 2;
-      this.BalancerLb.string = this.balanceUser.toString();
-      this.WinNotice.play("DragonWinIcon");
-      this.DragonWinintro.play("DragonIntro");
-      // Sử dụng biến để xác định loại WinIntro
-      this.winIntroType = "DragonIntro";
-      this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
-        // Kiểm tra loại WinIntro
-        if (this.winIntroType === "DragonIntro") {
-          this.DragonNode.play("DragonAttack");
-          this.AudioController.onAudio(12);
-          this.DragonNode.on(Animation.EventType.FINISHED, () => {
-            this.ExplosionDra.play();
-            this.AudioController.onAudio(10);
-            this.TigerNode.play("TigerHurt");
+    this.WinNotice.play("FightAnim");
+    this.winIntroType = "FightAnim";
+    this.WinNotice.on(Animation.EventType.FINISHED, () => {
+      if (this.result === "tigerWin" && this.winIntroType === "FightAnim") {
+        this.balanceUser = this.balanceUser + this.UserBetTigerIcon * 2;
+        this.BalancerLb.string = this.balanceUser.toString();
+        this.WinNotice.play("TigerWin");
+        this.DragonWinintro.play("TigerIntro");
+        this.winIntroType = "TigerIntro";
+        this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
+          if (this.winIntroType === "TigerIntro") {
+            this.TigerNode.play("TigerAttack");
             this.TigerNode.on(Animation.EventType.FINISHED, () => {
+              this.DragonNode.play("DragonHurt");
+              this.DragonNode.on(Animation.EventType.FINISHED, () => {
+                this.DragonNode.play("DragonIde");
+                this.tweenChildrenToPosition(
+                  this.ValueAnim,
+                  new Vec3(30, 560),
+                  0.5
+                );
+                this.tweenChildrenToPosition(
+                  this.ValueAnim1,
+                  new Vec3(30, 560),
+                  0.5
+                );
+                this.tweenChildrenToPosition(
+                  this.ValueAnim2,
+                  new Vec3(30, 560),
+                  0.5
+                );
+              });
+
               this.TigerNode.play("TigerIde");
-              this.tweenChildrenToPosition(
-                this.ValueAnim,
-                new Vec3(30, 560),
-                0.5
-              );
-              this.tweenChildrenToPosition(
-                this.ValueAnim1,
-                new Vec3(30, 560),
-                0.5
-              );
-              this.tweenChildrenToPosition(
-                this.ValueAnim2,
-                new Vec3(30, 560),
-                0.5
-              );
+              this.TigerNode.off(Animation.EventType.FINISHED);
             });
-            this.DragonNode.play("DragonIde");
-            this.DragonNode.off(Animation.EventType.FINISHED);
-          });
-        }
-      });
-    }
-    if (this.NetworkConnect.result === "Tie") {
-      this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
-      this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
-      this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
-    }
+          }
+        });
+      }
+      if (this.result === "dragonWin" && this.winIntroType === "FightAnim") {
+        this.balanceUser = this.balanceUser + this.UserBetDragonIcon * 2;
+        this.BalancerLb.string = this.balanceUser.toString();
+        this.WinNotice.play("DragonWinIcon");
+        this.DragonWinintro.play("DragonIntro");
+        // Sử dụng biến để xác định loại WinIntro
+        this.winIntroType = "DragonIntro";
+        this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
+          // Kiểm tra loại WinIntro
+          if (this.winIntroType === "DragonIntro") {
+            this.DragonNode.play("DragonAttack");
+            this.AudioController.onAudio(12);
+            this.DragonNode.on(Animation.EventType.FINISHED, () => {
+              this.ExplosionDra.play();
+              this.AudioController.onAudio(10);
+              this.TigerNode.play("TigerHurt");
+              this.TigerNode.on(Animation.EventType.FINISHED, () => {
+                this.TigerNode.play("TigerIde");
+                this.tweenChildrenToPosition(
+                  this.ValueAnim,
+                  new Vec3(30, 560),
+                  0.5
+                );
+                this.tweenChildrenToPosition(
+                  this.ValueAnim1,
+                  new Vec3(30, 560),
+                  0.5
+                );
+                this.tweenChildrenToPosition(
+                  this.ValueAnim2,
+                  new Vec3(30, 560),
+                  0.5
+                );
+              });
+              this.DragonNode.play("DragonIde");
+              this.DragonNode.off(Animation.EventType.FINISHED);
+            });
+          }
+        });
+      }
+      if (
+        this.result === "Tie" &&
+        this.winIntroType === "FightAnim" &&
+        this.Tiewarn === false
+      ) {
+        this.WinNotice.play("TieWin");
+        this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
+        this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
+        this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
+        this.Tiewarn = true;
+      }
+    });
   }
   private shownResult() {
-    this.NetworkConnect.room.onMessage(
-      "result",
-      (message: { dragonCard: { suit: string; value: number } }) => {}
-    );
-    tween(this.CardNodeL)
-      .to(0.4, {
-        position: new Vec3(
-          this.CardNodeL.position.x + 100,
-          this.CardNodeL.position.y - 300
-        ),
-      })
-      .call(() => {
-        this.displayImages();
-      })
-      .start();
+    if ((this.cardImg = true)) {
+      tween(this.CardNodeL)
+        .to(0.4, {
+          position: new Vec3(
+            this.CardNodeL.position.x + 100,
+            this.CardNodeL.position.y - 300
+          ),
+        })
+        .call(() => {
+          // this.displayImages();
+        })
+        .start();
 
-    tween(this.CardNodeR)
-      .to(0.4, {
-        position: new Vec3(
-          this.CardNodeR.position.x - 100,
-          this.CardNodeR.position.y - 300
-        ),
-      })
-      .call(() => {
-        this.displayImagesCardR();
-        // this.createGrid();
-        // this.createGridNot();
-      })
-      .start();
+      tween(this.CardNodeR)
+        .to(0.4, {
+          position: new Vec3(
+            this.CardNodeR.position.x - 100,
+            this.CardNodeR.position.y - 300
+          ),
+        })
+        .call(() => {
+          // this.displayImagesCardR();
+          // this.createGrid();
+          // this.createGridNot();
+        })
+        .start();
+    }
   }
 }

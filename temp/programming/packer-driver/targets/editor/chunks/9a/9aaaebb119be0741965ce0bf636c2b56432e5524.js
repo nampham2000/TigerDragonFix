@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Label, Node, tween, Vec3, Animation, SpriteFrame, Sprite, Graphics, Color, instantiate, Prefab, Button, AudioSource, Chip, NetworkConnect, AudioController, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _dec21, _dec22, _dec23, _dec24, _dec25, _dec26, _dec27, _dec28, _dec29, _dec30, _dec31, _dec32, _dec33, _dec34, _dec35, _dec36, _dec37, _dec38, _dec39, _dec40, _dec41, _dec42, _dec43, _dec44, _dec45, _dec46, _dec47, _dec48, _dec49, _dec50, _dec51, _dec52, _dec53, _dec54, _dec55, _dec56, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _descriptor20, _descriptor21, _descriptor22, _descriptor23, _descriptor24, _descriptor25, _descriptor26, _descriptor27, _descriptor28, _descriptor29, _descriptor30, _descriptor31, _descriptor32, _descriptor33, _descriptor34, _descriptor35, _descriptor36, _descriptor37, _descriptor38, _descriptor39, _descriptor40, _descriptor41, _descriptor42, _descriptor43, _descriptor44, _descriptor45, _descriptor46, _descriptor47, _descriptor48, _descriptor49, _descriptor50, _descriptor51, _descriptor52, _descriptor53, _descriptor54, _descriptor55, _crd, ccclass, property, GameController;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Label, Node, tween, Vec3, Animation, SpriteFrame, Sprite, Graphics, Color, instantiate, Prefab, Button, AudioSource, Chip, NetworkConnect, AudioController, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _dec21, _dec22, _dec23, _dec24, _dec25, _dec26, _dec27, _dec28, _dec29, _dec30, _dec31, _dec32, _dec33, _dec34, _dec35, _dec36, _dec37, _dec38, _dec39, _dec40, _dec41, _dec42, _dec43, _dec44, _dec45, _dec46, _dec47, _dec48, _dec49, _dec50, _dec51, _dec52, _dec53, _dec54, _dec55, _dec56, _dec57, _dec58, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _descriptor20, _descriptor21, _descriptor22, _descriptor23, _descriptor24, _descriptor25, _descriptor26, _descriptor27, _descriptor28, _descriptor29, _descriptor30, _descriptor31, _descriptor32, _descriptor33, _descriptor34, _descriptor35, _descriptor36, _descriptor37, _descriptor38, _descriptor39, _descriptor40, _descriptor41, _descriptor42, _descriptor43, _descriptor44, _descriptor45, _descriptor46, _descriptor47, _descriptor48, _descriptor49, _descriptor50, _descriptor51, _descriptor52, _descriptor53, _descriptor54, _descriptor55, _descriptor56, _descriptor57, _crd, ccclass, property, GameController;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -121,9 +121,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       }), _dec29 = property({
         type: Node
       }), _dec30 = property({
-        type: AudioSource
+        type: Node
       }), _dec31 = property({
-        type: Animation
+        type: AudioSource
       }), _dec32 = property({
         type: Animation
       }), _dec33 = property({
@@ -137,32 +137,36 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       }), _dec37 = property({
         type: Animation
       }), _dec38 = property({
-        type: SpriteFrame
+        type: Animation
       }), _dec39 = property({
-        type: SpriteFrame
+        type: Animation
       }), _dec40 = property({
         type: SpriteFrame
       }), _dec41 = property({
         type: SpriteFrame
       }), _dec42 = property({
         type: SpriteFrame
-      }), _dec43 = property(Node), _dec44 = property(Node), _dec45 = property(Prefab), _dec46 = property(Prefab), _dec47 = property(Prefab), _dec48 = property({
-        type: Node
-      }), _dec49 = property({
-        type: Node
-      }), _dec50 = property({
+      }), _dec43 = property({
+        type: SpriteFrame
+      }), _dec44 = property({
+        type: SpriteFrame
+      }), _dec45 = property(Node), _dec46 = property(Node), _dec47 = property(Prefab), _dec48 = property(Prefab), _dec49 = property(Prefab), _dec50 = property({
         type: Node
       }), _dec51 = property({
-        type: Label
+        type: Node
       }), _dec52 = property({
-        type: Label
+        type: Node
       }), _dec53 = property({
-        type: SpriteFrame
+        type: Label
       }), _dec54 = property({
+        type: Label
+      }), _dec55 = property({
+        type: SpriteFrame
+      }), _dec56 = property({
         type: [Button]
-      }), _dec55 = property(_crd && NetworkConnect === void 0 ? (_reportPossibleCrUseOfNetworkConnect({
+      }), _dec57 = property(_crd && NetworkConnect === void 0 ? (_reportPossibleCrUseOfNetworkConnect({
         error: Error()
-      }), NetworkConnect) : NetworkConnect), _dec56 = property({
+      }), NetworkConnect) : NetworkConnect), _dec58 = property({
         type: _crd && AudioController === void 0 ? (_reportPossibleCrUseOfAudioController({
           error: Error()
         }), AudioController) : AudioController
@@ -226,60 +230,64 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _initializerDefineProperty(this, "loadingPage", _descriptor28, this);
 
-          _initializerDefineProperty(this, "loadingAudio", _descriptor29, this);
+          _initializerDefineProperty(this, "bgHost", _descriptor29, this);
 
-          _initializerDefineProperty(this, "CardNodeAnim", _descriptor30, this);
+          _initializerDefineProperty(this, "loadingAudio", _descriptor30, this);
 
-          _initializerDefineProperty(this, "WinNotice", _descriptor31, this);
+          _initializerDefineProperty(this, "CardNodeAnim", _descriptor31, this);
 
-          _initializerDefineProperty(this, "DragonWinintro", _descriptor32, this);
+          _initializerDefineProperty(this, "WinNotice", _descriptor32, this);
 
-          _initializerDefineProperty(this, "DragonNode", _descriptor33, this);
+          _initializerDefineProperty(this, "DragonWinintro", _descriptor33, this);
 
-          _initializerDefineProperty(this, "TigerNode", _descriptor34, this);
+          _initializerDefineProperty(this, "DragonNode", _descriptor34, this);
 
-          _initializerDefineProperty(this, "StartBet", _descriptor35, this);
+          _initializerDefineProperty(this, "TigerNode", _descriptor35, this);
 
-          _initializerDefineProperty(this, "ExplosionDra", _descriptor36, this);
+          _initializerDefineProperty(this, "StartBet", _descriptor36, this);
 
-          _initializerDefineProperty(this, "listCardRes", _descriptor37, this);
+          _initializerDefineProperty(this, "ExplosionDra", _descriptor37, this);
 
-          _initializerDefineProperty(this, "listCardResHeart", _descriptor38, this);
+          _initializerDefineProperty(this, "hostAnim", _descriptor38, this);
 
-          _initializerDefineProperty(this, "listCardResclubs", _descriptor39, this);
+          _initializerDefineProperty(this, "listCardRes", _descriptor39, this);
 
-          _initializerDefineProperty(this, "listCardResdiamonds", _descriptor40, this);
+          _initializerDefineProperty(this, "listCardResHeart", _descriptor40, this);
 
-          _initializerDefineProperty(this, "bankCard", _descriptor41, this);
+          _initializerDefineProperty(this, "listCardResclubs", _descriptor41, this);
 
-          _initializerDefineProperty(this, "pref", _descriptor42, this);
+          _initializerDefineProperty(this, "listCardResdiamonds", _descriptor42, this);
 
-          _initializerDefineProperty(this, "prefL", _descriptor43, this);
+          _initializerDefineProperty(this, "bankCard", _descriptor43, this);
 
-          _initializerDefineProperty(this, "Over", _descriptor44, this);
+          _initializerDefineProperty(this, "pref", _descriptor44, this);
 
-          _initializerDefineProperty(this, "Under", _descriptor45, this);
+          _initializerDefineProperty(this, "prefL", _descriptor45, this);
 
-          _initializerDefineProperty(this, "Tie", _descriptor46, this);
+          _initializerDefineProperty(this, "Over", _descriptor46, this);
+
+          _initializerDefineProperty(this, "Under", _descriptor47, this);
+
+          _initializerDefineProperty(this, "Tie", _descriptor48, this);
 
           // private countDownLb: Label;
-          _initializerDefineProperty(this, "ToatalAv", _descriptor47, this);
+          _initializerDefineProperty(this, "ToatalAv", _descriptor49, this);
 
-          _initializerDefineProperty(this, "ToatalUser", _descriptor48, this);
+          _initializerDefineProperty(this, "ToatalUser", _descriptor50, this);
 
-          _initializerDefineProperty(this, "PayUser", _descriptor49, this);
+          _initializerDefineProperty(this, "PayUser", _descriptor51, this);
 
-          _initializerDefineProperty(this, "BalanceList", _descriptor50, this);
+          _initializerDefineProperty(this, "BalanceList", _descriptor52, this);
 
-          _initializerDefineProperty(this, "TotalBetLB", _descriptor51, this);
+          _initializerDefineProperty(this, "TotalBetLB", _descriptor53, this);
 
-          _initializerDefineProperty(this, "PayUserSprite", _descriptor52, this);
+          _initializerDefineProperty(this, "PayUserSprite", _descriptor54, this);
 
-          _initializerDefineProperty(this, "listCancelBet", _descriptor53, this);
+          _initializerDefineProperty(this, "listCancelBet", _descriptor55, this);
 
-          _initializerDefineProperty(this, "NetworkConnect", _descriptor54, this);
+          _initializerDefineProperty(this, "NetworkConnect", _descriptor56, this);
 
-          _initializerDefineProperty(this, "AudioController", _descriptor55, this);
+          _initializerDefineProperty(this, "AudioController", _descriptor57, this);
 
           this.UserBetTigerIcon = 0;
           this.UserBetDragonIcon = 0;
@@ -321,6 +329,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.assignHostName = false;
           this.spriteFrame = void 0;
           this.spriteFrameR = void 0;
+          this.cardSuit = void 0;
+          this.cardValue = void 0;
+          this.cardTigerSuit = void 0;
+          this.cardTigerValue = void 0;
+          this.cardImg = false;
+          this.Tiewarn = false;
+          this.result = void 0;
+          this.host = false;
           this.log3 = void 0;
         }
 
@@ -347,12 +363,25 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.drawRectangleTotal(1);
           this.drawRectangleTotal(2);
           this.AudioController.settingAudio(0);
+          this.cardSuit = "1";
+          this.cardTigerSuit = "1";
         }
 
         update(deltaTime) {
-          // this.BalancerLb.string = this.NetworkConnect.TotalBalanceUser;
-          // console.log(this.NetworkConnect.TotalBalanceUser);
-          // this.NetworkConnect.room.balance
+          if (this.cardImg === false) {
+            this.NetworkConnect.room.onMessage("result", message => {
+              console.log(message.result);
+              this.cardTigerSuit = message.dragonCard.suit;
+              this.cardTigerSuit = message.tigerCard.suit;
+              this.cardValue = message.dragonCard.value;
+              this.cardTigerValue = message.tigerCard.value;
+              this.result = message.result; // this.cardImg = true;
+
+              this.displayImages();
+              this.displayImagesCardR();
+            }); // Đặt cờ để biết rằng sự kiện đã được thiết lập
+          }
+
           if (this.NetworkConnect.balanceUser) {
             if (this.assignUserName === false) {
               this.sessionId = this.NetworkConnect.room.state.players.get(this.NetworkConnect.room.sessionId);
@@ -403,11 +432,26 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }
 
           if (this.NetworkConnect.gameState === "idle" && this.GameStateIdle === false) {
+            if (this.NetworkConnect.room && this.NetworkConnect.room.sessionId === this.NetworkConnect.currentHost) {
+              if (this.host === false) {
+                this.bgHost.active = true;
+                this.hostAnim.play();
+                setTimeout(() => {
+                  this.bgHost.active = false;
+                }, 1730); // this.hostAnim.node.active = true;
+
+                this.hostAnim.on(Animation.EventType.FINISHED, () => {// this.hostAnim.node.active = false;
+                });
+                this.host = true;
+              }
+            }
+
             this.NetworkConnect.room.send("getHistories");
             this.NetworkConnect.room.onMessage("histories", message => {
               // console.log("History", message.documents[0].result);
               // console.log("History", message.documents[0].result2);
               this.createGridNot(message.documents);
+              this.createGrid(message.documents);
             });
             this.RestartBalnce();
             this.checkSateCurrent = true;
@@ -418,6 +462,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.GameStateReuslt = false;
             this.GameStateFight = false;
             this.GameStateStopBet = false;
+            this.Tiewarn = false; // this.cardImg = false;
           }
 
           if (this.NetworkConnect.gameState === "startBetting") {
@@ -434,7 +479,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.NetworkConnect.room.onMessage("histories", message => {
               console.log("History", message.documents[0].result);
               this.createGridNot(message.documents);
-            });
+              this.createGrid(message.documents);
+            }); // if (this.host === false) {
+            //   this.bgHost.active = true;
+            //   this.hostAnim.play();
+            //   setTimeout(() => {
+            //     this.bgHost.active = false;
+            //   }, 1730);
+            //   this.hostAnim.node.active = true;
+            //   this.hostAnim.on(Animation.EventType.FINISHED, () => {
+            //     // this.hostAnim.node.active = false;
+            //   });
+            //   this.host = true;
+            // }
+
             this.GameStateStart = true;
           }
 
@@ -519,7 +577,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               this.createSpriteNode(-951, 193, this.ValueAnim1);
             }
 
-            this.PosBet();
             this.AudioController.onAudio(8);
           }
         }
@@ -565,27 +622,30 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             "4": this.listCardResHeart,
             "2": this.listCardResclubs,
             "3": this.listCardResdiamonds
-          };
-          this.NetworkConnect.room.onMessage("result", message => {
-            const cardList = suitToResourceMap[message.dragonCard.suit];
+          }; // this.NetworkConnect.room.onMessage(
+          //   "result",
+          //   (message: { dragonCard: { suit: string; value: number } }) => {
 
-            if (cardList) {
-              this.spriteFrame = cardList[message.dragonCard.value - 1];
-            } else {
-              console.error("Unknown suit:", message.dragonCard.suit);
-              return;
-            } // Lấy component Sprite từ CardNodeL
+          const cardList = suitToResourceMap[this.cardSuit];
+
+          if (cardList) {
+            this.spriteFrame = cardList[this.cardValue - 1];
+          } else {
+            console.error("Unknown suit:", this.cardSuit);
+            return;
+          } // Lấy component Sprite từ CardNodeL
 
 
-            const spriteComponent = this.CardNodeL.getComponent(Sprite);
+          const spriteComponent = this.CardNodeL.getComponent(Sprite);
 
-            if (spriteComponent) {
-              // Gán trực tiếp spriteFrame cho component Sprite
-              spriteComponent.spriteFrame = this.spriteFrame;
-            } else {
-              console.error("Component Sprite bị thiếu trên CardNodeL!");
-            }
-          });
+          if (spriteComponent) {
+            // Gán trực tiếp spriteFrame cho component Sprite
+            spriteComponent.spriteFrame = this.spriteFrame;
+          } else {
+            console.error("Component Sprite bị thiếu trên CardNodeL!");
+          } //   }
+          // );
+
         }
 
         displayImagesCardR() {
@@ -594,26 +654,68 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             "4": this.listCardResHeart,
             "2": this.listCardResclubs,
             "3": this.listCardResdiamonds
-          };
-          this.NetworkConnect.room.onMessage("result", message => {
-            const cardList = suitToResourceMap[message.tigerCard.suit];
+          }; // this.NetworkConnect.room.onMessage(
+          //   "result",
+          //   (message: { tigerCard: { suit: string; value: number } }) => {
+          //     console.log("aaaaaaaaaaaaaa");
+          // if (this.cardTigerValue !== undefined) {
+          //   this.cardTigerValue = this.NetworkConnect.tigerResult;
+          // }
 
-            if (cardList) {
-              this.spriteFrameR = cardList[message.tigerCard.value - 1];
-            } else {
-              console.error("Unknown suit:", message.tigerCard.suit);
-              return;
-            }
+          console.log(this.cardTigerValue); // if (this.cardTigerValue === undefined) {
+          //   this.cardTigerValue = this.NetworkConnect.tigerResult;
+          // }
 
-            const sprite = this.CardNodeR.getComponent(Sprite);
+          const cardList = suitToResourceMap[this.cardTigerSuit];
 
-            if (sprite && this.spriteFrameR) {
-              sprite.spriteFrame = this.spriteFrameR;
-            } else {
-              console.error("Sprite or SpriteFrame is missing!");
-            }
-          });
-        }
+          if (cardList) {
+            this.spriteFrameR = cardList[this.cardTigerValue - 1];
+          } else {
+            console.error("Unknown suit:", this.cardTigerSuit);
+            return;
+          }
+
+          const sprite = this.CardNodeR.getComponent(Sprite);
+
+          if (sprite && this.spriteFrameR) {
+            sprite.spriteFrame = this.spriteFrameR;
+          } else {
+            console.error("Sprite or SpriteFrame is missing!");
+          } //   }
+          // );
+
+        } // private displayImagesCardR() {
+        //   const suitToResourceMap: { [key: string]: SpriteFrame[] } = {
+        //     "1": this.listCardRes,
+        //     "4": this.listCardResHeart,
+        //     "2": this.listCardResclubs,
+        //     "3": this.listCardResdiamonds,
+        //   };
+        //   console.log("aaaaaaaaaaaaaaaaaaa");
+        //   this.NetworkConnect.room.onMessage(
+        //     "result",
+        //     (message: { tigerCard: { suit: string; value: number } }) => {
+        //       console.log("Received message:", message);
+        //       const cardList: SpriteFrame[] | undefined =
+        //         suitToResourceMap[message.tigerCard.suit];
+        //       if (cardList) {
+        //         this.spriteFrameR = cardList[message.tigerCard.value - 1];
+        //         console.log("SpriteFrame selected:", this.spriteFrameR);
+        //       } else {
+        //         console.error("Unknown suit:", message.tigerCard.suit);
+        //         return;
+        //       }
+        //       const sprite = this.CardNodeR.getComponent(Sprite);
+        //       if (sprite && this.spriteFrameR) {
+        //         sprite.spriteFrame = this.spriteFrameR;
+        //         console.log("Sprite frame set successfully.");
+        //       } else {
+        //         console.error("Sprite or SpriteFrame is missing!");
+        //       }
+        //     }
+        //   );
+        // }
+
 
         drawRectangle() {
           const width = 250;
@@ -799,79 +901,134 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           graphics.fillColor = lightGray;
           graphics.rect(-numCols * cellWidth / 2, -numRows * cellHeight / 2, numCols * cellWidth, numRows * cellHeight);
           graphics.fill();
-        }
+        } // private createGrid(documents: Document[]) {
+        //   let prefabType;
+        //   // if (this.NetworkConnect.result === "Tie") {
+        //   //   prefabType = this.Tie;
+        //   // } else if (this.NetworkConnect.result === "tigerWin") {
+        //   //   prefabType = this.Under;
+        //   // } else if (this.NetworkConnect.result === "dragonWin") {
+        //   //   prefabType = this.Over;
+        //   // }
+        //   // if (this.result === "Tie") {
+        //   //   prefabType = this.Tie;
+        //   // } else if (this.result === "tigerWin") {
+        //   //   prefabType = this.Under;
+        //   // } else if (this.result === "dragonWin") {
+        //   //   prefabType = this.Over;
+        //   // }
+        //   const prefabMap: { [key: string]: any } = {
+        //     TigerWin: this.Under,
+        //     DragonWin: this.Over,
+        //     Tie: this.Tie,
+        //   };
+        //   this.clearGridNt();
+        //   this.currentRowL = 0;
+        //   this.currentColL = 0;
+        //   for (const doc of documents[0].result) {
+        //     const prefabType = prefabMap[doc];
+        //     if (prefabType) {
+        //       if (
+        //         this.previousPrefabType !== null &&
+        //         prefabType.name !== this.previousPrefabType.name
+        //       ) {
+        //         this.currentCol++;
+        //         this.currentRow = 0;
+        //         this.currentRowClone = 0;
+        //         if (this.currentCol >= this.numCols) {
+        //           this.clearGrid();
+        //           this.currentCol = 0;
+        //         }
+        //       }
+        //       const cell = instantiate(prefabType);
+        //       const posX = this.currentCol * this.cellWidth;
+        //       const posY = -this.currentRow * this.cellHeight;
+        //       cell.position = new Vec3(posX, posY);
+        //       this.pref.addChild(cell);
+        //       this.previousPrefabType = prefabType;
+        //       this.currentRowClone++;
+        //       if (this.currentRow < 5) {
+        //         this.currentRow++;
+        //       }
+        //       // console.log("col", this.currentCol);
+        //     } else {
+        //       console.error(`Prefab type not found for result: ${doc}`);
+        //     }
+        //   }
+        //   // if (
+        //   //   this.previousPrefabType !== null &&
+        //   //   prefabType.name !== this.previousPrefabType.name
+        //   // ) {
+        //   //   this.currentCol++;
+        //   //   this.currentRow = 0;
+        //   //   this.currentRowClone = 0;
+        //   //   if (this.currentCol >= this.numCols) {
+        //   //     this.clearGrid();
+        //   //     this.currentCol = 0;
+        //   //   }
+        //   // }
+        //   // const cell = instantiate(prefabType);
+        //   // const posX = this.currentCol * this.cellWidth;
+        //   // const posY = -this.currentRow * this.cellHeight;
+        //   // cell.position = new Vec3(posX, posY);
+        //   // this.pref.addChild(cell);
+        //   // this.previousPrefabType = prefabType;
+        //   // this.currentRowClone++;
+        //   // if (this.currentRow < 5) {
+        //   //   this.currentRow++;
+        //   // }
+        // }
+        // private clearGrid() {
+        //   this.pref.removeAllChildren();
+        // }
 
-        createGrid() {
-          let prefabType;
 
-          if (this.NetworkConnect.result === "Tie") {
-            prefabType = this.Tie;
-          } else if (this.NetworkConnect.result === "tigerWin") {
-            prefabType = this.Under;
-          } else if (this.NetworkConnect.result === "dragonWin") {
-            prefabType = this.Over;
-          }
+        createGrid(documents) {
+          // Ánh xạ các giá trị với prefab tương ứng
+          const prefabMap = {
+            TigerWin: this.Under,
+            DragonWin: this.Over,
+            Tie: this.Tie
+          };
+          this.clearGrid();
+          this.currentRow = 0;
+          this.currentCol = 0;
+          let previousResult = null;
 
-          if (this.currentRowClone > 5 && prefabType.name !== this.previousPrefabType.name) {
-            this.currentCol++; // this.currentRow = 0;
+          for (const doc of documents[0].result) {
+            const prefabType = prefabMap[doc];
 
-            if (this.currentCol >= this.numCols) {
-              this.clearGrid();
-              this.currentCol = 0;
+            if (prefabType) {
+              if (previousResult !== null && doc !== previousResult) {
+                this.currentCol++;
+                this.currentRow = 0;
+              } else if (this.currentRow >= this.numRows) {
+                // If the current column is full and the result is the same as previous
+                this.currentCol++;
+                this.currentRow = this.numRows - 1;
+              }
+
+              if (this.currentCol >= this.numCols) {
+                this.clearGrid();
+                this.currentCol = 0;
+              }
+
+              const cell = instantiate(prefabType);
+              const posX = this.currentCol * this.cellWidth;
+              const posY = -this.currentRow * this.cellHeight;
+              cell.position = new Vec3(posX, posY);
+              this.pref.addChild(cell);
+              this.currentRow++;
+              previousResult = doc;
+            } else {
+              console.error(`Prefab type not found for result: ${doc}`);
             }
-          }
-
-          if (this.previousPrefabType !== null && prefabType.name !== this.previousPrefabType.name) {
-            this.currentCol++;
-            this.currentRow = 0;
-            this.currentRowClone = 0;
-
-            if (this.currentCol >= this.numCols) {
-              this.clearGrid();
-              this.currentCol = 0;
-            }
-          }
-
-          const cell = instantiate(prefabType);
-          const posX = this.currentCol * this.cellWidth;
-          const posY = -this.currentRow * this.cellHeight;
-          cell.position = new Vec3(posX, posY);
-          this.pref.addChild(cell);
-          this.previousPrefabType = prefabType;
-          this.currentRowClone++;
-
-          if (this.currentRow < 5) {
-            this.currentRow++;
           }
         }
 
         clearGrid() {
           this.pref.removeAllChildren();
-        } // private createGridNot() {
-        //   let prefabType;
-        //   if (this.NetworkConnect.result === "Tie") {
-        //     prefabType = this.Tie;
-        //   } else if (this.NetworkConnect.result === "tigerWin") {
-        //     prefabType = this.Under;
-        //   } else if (this.NetworkConnect.result === "dragonWin") {
-        //     prefabType = this.Over;
-        //   }
-        //   if (this.currentRowL >= this.numRows) {
-        //     this.currentColL++;
-        //     this.currentRowL = 0;
-        //     if (this.currentColL >= this.numCols) {
-        //       this.clearGridNt();
-        //       this.currentCol = 0;
-        //     }
-        //   }
-        //   const cell = instantiate(prefabType);
-        //   const posX = this.currentColL * this.cellWidth; // Tính vị trí x dựa trên chỉ mục cột hiện tại
-        //   const posY = -this.currentRowL * this.cellHeight; // Tính vị trí y dựa trên chỉ mục hàng hiện tại
-        //   cell.position = new Vec3(posX, posY);
-        //   this.prefL.addChild(cell);
-        //   this.currentRowL++;
-        // }
-
+        }
 
         createGridNot(documents) {
           // Ánh xạ các giá trị với prefab tương ứng
@@ -882,8 +1039,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           };
           this.clearGridNt();
           this.currentRowL = 0;
-          this.currentColL = 0; // this.currentCol = 0;
-          // this.currentRowL = 0;
+          this.currentColL = 0;
 
           for (const doc of documents[0].result) {
             const prefabType = prefabMap[doc];
@@ -1071,82 +1227,86 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.GameEnd = true;
         }
 
-        PosBet() {}
-
         fight() {
-          if (this.NetworkConnect.result === "tigerWin") {
-            this.balanceUser = this.balanceUser + this.UserBetTigerIcon * 2;
-            this.BalancerLb.string = this.balanceUser.toString();
-            this.WinNotice.play("TigerWin");
-            this.DragonWinintro.play("TigerIntro");
-            this.winIntroType = "TigerIntro";
-            this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
-              if (this.winIntroType === "TigerIntro") {
-                this.TigerNode.play("TigerAttack");
-                this.TigerNode.on(Animation.EventType.FINISHED, () => {
-                  this.DragonNode.play("DragonHurt");
-                  this.DragonNode.on(Animation.EventType.FINISHED, () => {
-                    this.DragonNode.play("DragonIde");
-                    this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
-                    this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
-                    this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
-                  });
-                  this.TigerNode.play("TigerIde");
-                  this.TigerNode.off(Animation.EventType.FINISHED);
-                });
-              }
-            });
-          }
-
-          if (this.NetworkConnect.result === "dragonWin") {
-            this.balanceUser = this.balanceUser + this.UserBetDragonIcon * 2;
-            this.BalancerLb.string = this.balanceUser.toString();
-            this.WinNotice.play("DragonWinIcon");
-            this.DragonWinintro.play("DragonIntro"); // Sử dụng biến để xác định loại WinIntro
-
-            this.winIntroType = "DragonIntro";
-            this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
-              // Kiểm tra loại WinIntro
-              if (this.winIntroType === "DragonIntro") {
-                this.DragonNode.play("DragonAttack");
-                this.AudioController.onAudio(12);
-                this.DragonNode.on(Animation.EventType.FINISHED, () => {
-                  this.ExplosionDra.play();
-                  this.AudioController.onAudio(10);
-                  this.TigerNode.play("TigerHurt");
+          this.WinNotice.play("FightAnim");
+          this.winIntroType = "FightAnim";
+          this.WinNotice.on(Animation.EventType.FINISHED, () => {
+            if (this.result === "tigerWin" && this.winIntroType === "FightAnim") {
+              this.balanceUser = this.balanceUser + this.UserBetTigerIcon * 2;
+              this.BalancerLb.string = this.balanceUser.toString();
+              this.WinNotice.play("TigerWin");
+              this.DragonWinintro.play("TigerIntro");
+              this.winIntroType = "TigerIntro";
+              this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
+                if (this.winIntroType === "TigerIntro") {
+                  this.TigerNode.play("TigerAttack");
                   this.TigerNode.on(Animation.EventType.FINISHED, () => {
+                    this.DragonNode.play("DragonHurt");
+                    this.DragonNode.on(Animation.EventType.FINISHED, () => {
+                      this.DragonNode.play("DragonIde");
+                      this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
+                      this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
+                      this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
+                    });
                     this.TigerNode.play("TigerIde");
-                    this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
-                    this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
-                    this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
+                    this.TigerNode.off(Animation.EventType.FINISHED);
                   });
-                  this.DragonNode.play("DragonIde");
-                  this.DragonNode.off(Animation.EventType.FINISHED);
-                });
-              }
-            });
-          }
+                }
+              });
+            }
 
-          if (this.NetworkConnect.result === "Tie") {
-            this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
-            this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
-            this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
-          }
+            if (this.result === "dragonWin" && this.winIntroType === "FightAnim") {
+              this.balanceUser = this.balanceUser + this.UserBetDragonIcon * 2;
+              this.BalancerLb.string = this.balanceUser.toString();
+              this.WinNotice.play("DragonWinIcon");
+              this.DragonWinintro.play("DragonIntro"); // Sử dụng biến để xác định loại WinIntro
+
+              this.winIntroType = "DragonIntro";
+              this.DragonWinintro.on(Animation.EventType.FINISHED, () => {
+                // Kiểm tra loại WinIntro
+                if (this.winIntroType === "DragonIntro") {
+                  this.DragonNode.play("DragonAttack");
+                  this.AudioController.onAudio(12);
+                  this.DragonNode.on(Animation.EventType.FINISHED, () => {
+                    this.ExplosionDra.play();
+                    this.AudioController.onAudio(10);
+                    this.TigerNode.play("TigerHurt");
+                    this.TigerNode.on(Animation.EventType.FINISHED, () => {
+                      this.TigerNode.play("TigerIde");
+                      this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
+                      this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
+                      this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
+                    });
+                    this.DragonNode.play("DragonIde");
+                    this.DragonNode.off(Animation.EventType.FINISHED);
+                  });
+                }
+              });
+            }
+
+            if (this.result === "Tie" && this.winIntroType === "FightAnim" && this.Tiewarn === false) {
+              this.WinNotice.play("TieWin");
+              this.tweenChildrenToPosition(this.ValueAnim, new Vec3(30, 560), 0.5);
+              this.tweenChildrenToPosition(this.ValueAnim1, new Vec3(30, 560), 0.5);
+              this.tweenChildrenToPosition(this.ValueAnim2, new Vec3(30, 560), 0.5);
+              this.Tiewarn = true;
+            }
+          });
         }
 
         shownResult() {
-          this.NetworkConnect.room.onMessage("result", message => {});
-          tween(this.CardNodeL).to(0.4, {
-            position: new Vec3(this.CardNodeL.position.x + 100, this.CardNodeL.position.y - 300)
-          }).call(() => {
-            this.displayImages();
-          }).start();
-          tween(this.CardNodeR).to(0.4, {
-            position: new Vec3(this.CardNodeR.position.x - 100, this.CardNodeR.position.y - 300)
-          }).call(() => {
-            this.displayImagesCardR(); // this.createGrid();
-            // this.createGridNot();
-          }).start();
+          if (this.cardImg = true) {
+            tween(this.CardNodeL).to(0.4, {
+              position: new Vec3(this.CardNodeL.position.x + 100, this.CardNodeL.position.y - 300)
+            }).call(() => {// this.displayImages();
+            }).start();
+            tween(this.CardNodeR).to(0.4, {
+              position: new Vec3(this.CardNodeR.position.x - 100, this.CardNodeR.position.y - 300)
+            }).call(() => {// this.displayImagesCardR();
+              // this.createGrid();
+              // this.createGridNot();
+            }).start();
+          }
         }
 
       }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "betTigerLb", [_dec2], {
@@ -1291,165 +1451,175 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor29 = _applyDecoratedDescriptor(_class2.prototype, "loadingAudio", [_dec30], {
+      }), _descriptor29 = _applyDecoratedDescriptor(_class2.prototype, "bgHost", [_dec30], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor30 = _applyDecoratedDescriptor(_class2.prototype, "CardNodeAnim", [_dec31], {
+      }), _descriptor30 = _applyDecoratedDescriptor(_class2.prototype, "loadingAudio", [_dec31], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor31 = _applyDecoratedDescriptor(_class2.prototype, "WinNotice", [_dec32], {
+      }), _descriptor31 = _applyDecoratedDescriptor(_class2.prototype, "CardNodeAnim", [_dec32], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor32 = _applyDecoratedDescriptor(_class2.prototype, "DragonWinintro", [_dec33], {
+      }), _descriptor32 = _applyDecoratedDescriptor(_class2.prototype, "WinNotice", [_dec33], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor33 = _applyDecoratedDescriptor(_class2.prototype, "DragonNode", [_dec34], {
+      }), _descriptor33 = _applyDecoratedDescriptor(_class2.prototype, "DragonWinintro", [_dec34], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor34 = _applyDecoratedDescriptor(_class2.prototype, "TigerNode", [_dec35], {
+      }), _descriptor34 = _applyDecoratedDescriptor(_class2.prototype, "DragonNode", [_dec35], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor35 = _applyDecoratedDescriptor(_class2.prototype, "StartBet", [_dec36], {
+      }), _descriptor35 = _applyDecoratedDescriptor(_class2.prototype, "TigerNode", [_dec36], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor36 = _applyDecoratedDescriptor(_class2.prototype, "ExplosionDra", [_dec37], {
+      }), _descriptor36 = _applyDecoratedDescriptor(_class2.prototype, "StartBet", [_dec37], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor37 = _applyDecoratedDescriptor(_class2.prototype, "listCardRes", [_dec38], {
+      }), _descriptor37 = _applyDecoratedDescriptor(_class2.prototype, "ExplosionDra", [_dec38], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor38 = _applyDecoratedDescriptor(_class2.prototype, "hostAnim", [_dec39], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor39 = _applyDecoratedDescriptor(_class2.prototype, "listCardRes", [_dec40], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor38 = _applyDecoratedDescriptor(_class2.prototype, "listCardResHeart", [_dec39], {
+      }), _descriptor40 = _applyDecoratedDescriptor(_class2.prototype, "listCardResHeart", [_dec41], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor39 = _applyDecoratedDescriptor(_class2.prototype, "listCardResclubs", [_dec40], {
+      }), _descriptor41 = _applyDecoratedDescriptor(_class2.prototype, "listCardResclubs", [_dec42], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor40 = _applyDecoratedDescriptor(_class2.prototype, "listCardResdiamonds", [_dec41], {
+      }), _descriptor42 = _applyDecoratedDescriptor(_class2.prototype, "listCardResdiamonds", [_dec43], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor41 = _applyDecoratedDescriptor(_class2.prototype, "bankCard", [_dec42], {
+      }), _descriptor43 = _applyDecoratedDescriptor(_class2.prototype, "bankCard", [_dec44], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor42 = _applyDecoratedDescriptor(_class2.prototype, "pref", [_dec43], {
+      }), _descriptor44 = _applyDecoratedDescriptor(_class2.prototype, "pref", [_dec45], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor43 = _applyDecoratedDescriptor(_class2.prototype, "prefL", [_dec44], {
+      }), _descriptor45 = _applyDecoratedDescriptor(_class2.prototype, "prefL", [_dec46], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor44 = _applyDecoratedDescriptor(_class2.prototype, "Over", [_dec45], {
+      }), _descriptor46 = _applyDecoratedDescriptor(_class2.prototype, "Over", [_dec47], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return null;
         }
-      }), _descriptor45 = _applyDecoratedDescriptor(_class2.prototype, "Under", [_dec46], {
+      }), _descriptor47 = _applyDecoratedDescriptor(_class2.prototype, "Under", [_dec48], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return null;
         }
-      }), _descriptor46 = _applyDecoratedDescriptor(_class2.prototype, "Tie", [_dec47], {
+      }), _descriptor48 = _applyDecoratedDescriptor(_class2.prototype, "Tie", [_dec49], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return null;
         }
-      }), _descriptor47 = _applyDecoratedDescriptor(_class2.prototype, "ToatalAv", [_dec48], {
+      }), _descriptor49 = _applyDecoratedDescriptor(_class2.prototype, "ToatalAv", [_dec50], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor48 = _applyDecoratedDescriptor(_class2.prototype, "ToatalUser", [_dec49], {
+      }), _descriptor50 = _applyDecoratedDescriptor(_class2.prototype, "ToatalUser", [_dec51], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor49 = _applyDecoratedDescriptor(_class2.prototype, "PayUser", [_dec50], {
+      }), _descriptor51 = _applyDecoratedDescriptor(_class2.prototype, "PayUser", [_dec52], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor50 = _applyDecoratedDescriptor(_class2.prototype, "BalanceList", [_dec51], {
+      }), _descriptor52 = _applyDecoratedDescriptor(_class2.prototype, "BalanceList", [_dec53], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor51 = _applyDecoratedDescriptor(_class2.prototype, "TotalBetLB", [_dec52], {
+      }), _descriptor53 = _applyDecoratedDescriptor(_class2.prototype, "TotalBetLB", [_dec54], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor52 = _applyDecoratedDescriptor(_class2.prototype, "PayUserSprite", [_dec53], {
+      }), _descriptor54 = _applyDecoratedDescriptor(_class2.prototype, "PayUserSprite", [_dec55], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor53 = _applyDecoratedDescriptor(_class2.prototype, "listCancelBet", [_dec54], {
+      }), _descriptor55 = _applyDecoratedDescriptor(_class2.prototype, "listCancelBet", [_dec56], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor54 = _applyDecoratedDescriptor(_class2.prototype, "NetworkConnect", [_dec55], {
+      }), _descriptor56 = _applyDecoratedDescriptor(_class2.prototype, "NetworkConnect", [_dec57], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor55 = _applyDecoratedDescriptor(_class2.prototype, "AudioController", [_dec56], {
+      }), _descriptor57 = _applyDecoratedDescriptor(_class2.prototype, "AudioController", [_dec58], {
         configurable: true,
         enumerable: true,
         writable: true,

@@ -1732,6 +1732,9 @@
     "LoginBtnactive": {
       "__id__": 171
     },
+    "warnLb": {
+      "__id__": 168
+    },
     "_id": "4bHnWD955OP5YPjy0k7k5G"
   },
   {
@@ -4070,7 +4073,7 @@
       "b": 187,
       "a": 255
     },
-    "_string": "Enter Username",
+    "_string": "Enter Email",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -4592,7 +4595,7 @@
       "b": 187,
       "a": 255
     },
-    "_string": "Enter Username",
+    "_string": "Enter Email",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
