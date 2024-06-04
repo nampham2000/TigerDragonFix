@@ -405,7 +405,7 @@ export class GameController extends Component {
         this.assignUserName = true;
       }
 
-      this.BalancerLb.string = this.sessionId.balance;
+      this.BalancerLb.string = this.sessionId.balance.toFixed(2);
       this.TotalBetLB[0].string = this.NetworkConnect.betTiger.toString();
       this.TotalBetLB[1].string = this.NetworkConnect.betDragon.toString();
       this.TotalBetLB[2].string = this.NetworkConnect.betTie.toString();
@@ -585,6 +585,9 @@ export class GameController extends Component {
     ) {
       for (let i = 0; i < this.NetworkConnect.ListLabel.length; i++) {
         this.NetworkConnect.ListLabel[i].node.removeAllChildren();
+      }
+      for (let i = 0; i < this.NetworkConnect.ListLabelR.length; i++) {
+        this.NetworkConnect.ListLabelR[i].node.removeAllChildren();
       }
       // this.createGridNot();
       // this.createGrid();

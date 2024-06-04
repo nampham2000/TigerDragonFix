@@ -1,0 +1,267 @@
+6-5-2024 02:13:18 - debug: =================================== build Task (web-mobile-003) Start ================================
+6-5-2024 02:13:18 - debug: Start build task, options:{"name":"TigerDragon","server":"","platform":"web-mobile","buildPath":"project://build","debug":false,"md5Cache":false,"skipCompressTexture":true,"sourceMaps":false,"polyfills":{"asyncFunctions":false,"coreJs":false},"experimentalEraseModules":false,"startSceneAssetBundle":false,"bundleConfigs":[],"useBuiltinServer":false,"mainBundleIsRemote":false,"mainBundleCompressionType":"merge_dep","useSplashScreen":false,"bundleCommonChunk":false,"packAutoAtlas":true,"startScene":"39f4050b-725b-46e2-b9d1-1fe84456641f","outputName":"web-mobile-003","taskName":"web-mobile-003","scenes":[{"url":"db://assets/Scene/Game.scene","uuid":"6223537d-4143-493b-8d2a-2511d740155b"},{"url":"db://assets/Scene/Login.scene","uuid":"b30dd591-b5fd-46f7-a212-7e2b3d93ad49"},{"url":"db://assets/Scene/Logo.scene","uuid":"39f4050b-725b-46e2-b9d1-1fe84456641f"},{"url":"db://assets/Scene/scene-2d.scene","uuid":"d2909ce2-fa07-4516-a217-d75e95e77804"}],"packages":{"engine":{"cleanupImageCache":"inheritProjectSetting","__version__":"1.0.8"},"adsense-h5g-plugin":{"enableAdsense":false,"enableTestAd":false,"__version__":"1.0.1","AFPHostPropertyCode":"ca-host-pub-5396158963872751","AFPHostDomain":"douyougame.com","otherAFPHostPropertyCode":"","otherAFPDomain":""},"cocos-service":{"configID":"8d2e87","services":[],"__version__":"3.0.7"},"web-mobile":{"orientation":"landscape","embedWebDebugger":false,"cullEngineAsmJsModule":false,"__version__":"1.0.1"}},"__version__":"1.3.7","buildMode":"normal","logDest":"project://temp/builder/log/web-mobile6-5-2024 02-13.log"}
+6-5-2024 02:13:18 - debug: Build with Cocos Creator 3.8.2
+6-5-2024 02:13:18 - debug: cocos-service:(onBeforeBuild) start..., progress: 0%
+6-5-2024 02:13:18 - debug: // ---- build task cocos-service：onBeforeBuild ----
+6-5-2024 02:13:18 - debug: // ---- build task cocos-service：onBeforeBuild ---- (453ms)
+6-5-2024 02:13:18 - debug: cocos-service:(onBeforeBuild) in 453 ms ✓, progress: 2%
+6-5-2024 02:13:18 - debug: scene:(onBeforeBuild) start..., progress: 2%
+6-5-2024 02:13:18 - debug: // ---- build task scene：onBeforeBuild ----
+6-5-2024 02:13:18 - debug: // ---- build task scene：onBeforeBuild ---- (95ms)
+6-5-2024 02:13:18 - debug: scene:(onBeforeBuild) in 95 ms ✓, progress: 4%
+6-5-2024 02:13:18 - debug: Start lock asset db..., progress: 4%
+6-5-2024 02:13:18 - log: Asset DB is paused with build!
+6-5-2024 02:13:18 - debug: Query all assets info in project
+6-5-2024 02:13:18 - debug: init custom config: keepNodeUuid: false, useCache: true
+6-5-2024 02:13:18 - debug:   Number of all scenes: 4
+6-5-2024 02:13:18 - debug:   Number of all scripts: 11
+6-5-2024 02:13:18 - debug:   Number of other assets: 2301
+6-5-2024 02:13:18 - debug: web-mobile:(onAfterInit) start..., progress: 4%
+6-5-2024 02:13:18 - debug: // ---- build task web-mobile：onAfterInit ----
+6-5-2024 02:13:18 - debug: // ---- build task web-mobile：onAfterInit ---- (41ms)
+6-5-2024 02:13:18 - debug: web-mobile:(onAfterInit) in 41 ms ✓, progress: 7%
+6-5-2024 02:13:18 - debug: cocos-service:(onAfterInit) start..., progress: 7%
+6-5-2024 02:13:18 - debug: // ---- build task cocos-service：onAfterInit ----
+6-5-2024 02:13:19 - debug: // ---- build task cocos-service：onAfterInit ---- (501ms)
+6-5-2024 02:13:19 - debug: cocos-service:(onAfterInit) in 501 ms ✓, progress: 9%
+6-5-2024 02:13:19 - debug: engine:(onAfterInit) start..., progress: 9%
+6-5-2024 02:13:19 - debug: // ---- build task engine：onAfterInit ----
+6-5-2024 02:13:19 - debug: // ---- build task engine：onAfterInit ---- (70ms)
+6-5-2024 02:13:19 - debug: engine:(onAfterInit) in 70 ms ✓, progress: 11%
+6-5-2024 02:13:19 - debug: adsense-h5g-plugin:(onBeforeBundleInit) start..., progress: 11%
+6-5-2024 02:13:19 - debug: // ---- build task adsense-h5g-plugin：onBeforeBundleInit ----
+6-5-2024 02:13:19 - debug: [adsense-h5g-plugin] remove script success
+6-5-2024 02:13:19 - debug: // ---- build task adsense-h5g-plugin：onBeforeBundleInit ---- (132ms)
+6-5-2024 02:13:19 - debug: adsense-h5g-plugin:(onBeforeBundleInit) in 132 ms ✓, progress: 11%
+6-5-2024 02:13:19 - debug: Init all bundles start..., progress: 11%
+6-5-2024 02:13:19 - debug: Num of bundles: 2..., progress: 11%
+6-5-2024 02:13:19 - debug: reload all scripts.
+6-5-2024 02:13:19 - debug: Set detail map pack:///resolution-detail-map.json: {}
+6-5-2024 02:13:19 - groupCollapsed: Invalidate all modules
+6-5-2024 02:13:19 - debug: Unregister DebugViewRuntimeControl
+6-5-2024 02:13:19 - debug: Unregister AudioController
+6-5-2024 02:13:19 - debug: Unregister Chip
+6-5-2024 02:13:19 - debug: Unregister NetworkConnect
+6-5-2024 02:13:19 - debug: Unregister GameController
+6-5-2024 02:13:19 - debug: Unregister NetworkConnect
+6-5-2024 02:13:19 - debug(2): Unregister Controller
+6-5-2024 02:13:19 - debug: Unregister NewComponent
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/dd/dd8ffe4b66ab421921fe26a7524871e3101b074e.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/e1/e1c565942e2e2a10e33d2d89a61a92e3145f387d.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/51/51c34ac3bc053a71f45ca7a4d09725c47407f84f.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/f7/f7113731efbec96f9269f5cf22242992f8e2728c.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/a9/a93dab76e3238a0b042da75b8858c588f262bd41.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/45/450fe98e0c09e36909632d54e53f366cfac69048.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/ce/ce7e5aa88b800fcedf37c09bcee1ad850c91c253.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/df/dfe96abad266d94335d9a34862d25541e33d2f8c.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/a0/a0d063530de23ddade53e1a935bf64c81277c061.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/ad/ad6de2a62e219a68c48d33b88184224b16c0aa53.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/17/172eea0c7a39d45e36ad6aba7c58efca3d63875e.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/98/988a81babe43b22d10184b7353b8b4718e1957e1.js'
+6-5-2024 02:13:19 - debug: Invalidating 'pack:///chunks/5b/5b93ec48625108f5b5d7554d9ebaff2399514693.js'
+6-5-2024 02:13:19 - groupEnd: Invalidate all modules
+6-5-2024 02:13:19 - groupCollapsed: Imports all modules
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register DebugViewRuntimeControl
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/dd/dd8ffe4b66ab421921fe26a7524871e3101b074e.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register AudioController
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/e1/e1c565942e2e2a10e33d2d89a61a92e3145f387d.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register Chip
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/51/51c34ac3bc053a71f45ca7a4d09725c47407f84f.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/f7/f7113731efbec96f9269f5cf22242992f8e2728c.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/a0/a0d063530de23ddade53e1a935bf64c81277c061.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/df/dfe96abad266d94335d9a34862d25541e33d2f8c.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/ce/ce7e5aa88b800fcedf37c09bcee1ad850c91c253.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register NetworkConnect
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/45/450fe98e0c09e36909632d54e53f366cfac69048.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register GameController
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/a9/a93dab76e3238a0b042da75b8858c588f262bd41.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register NetworkConnect
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/ad/ad6de2a62e219a68c48d33b88184224b16c0aa53.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register Controller
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/17/172eea0c7a39d45e36ad6aba7c58efca3d63875e.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register Controller
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/98/988a81babe43b22d10184b7353b8b4718e1957e1.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Register NewComponent
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/5b/5b93ec48625108f5b5d7554d9ebaff2399514693.js" loaded.
+6-5-2024 02:13:19 - debug: [[Executor]] Module "pack:///chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js" loaded.
+6-5-2024 02:13:19 - groupEnd: Imports all modules
+6-5-2024 02:13:19 - debug: Incremental keys: 
+6-5-2024 02:13:19 - debug: web-mobile:(onAfterBundleInit) start..., progress: 11%
+6-5-2024 02:13:19 - debug: // ---- build task web-mobile：onAfterBundleInit ----
+6-5-2024 02:13:19 - debug: // ---- build task web-mobile：onAfterBundleInit ---- (120ms)
+6-5-2024 02:13:19 - debug: web-mobile:(onAfterBundleInit) in 120 ms ✓, progress: 11%
+6-5-2024 02:13:19 - debug: Query asset bundle start, progress: 11%
+6-5-2024 02:13:19 - debug: // ---- build task Query asset bundle ----
+6-5-2024 02:13:19 - debug: Init bundle root assets start..., progress: 11%
+6-5-2024 02:13:20 - debug: Query preload assets from cc.config.json: 60f7195c-ec2a-45eb-ba94-8955f60e81d0,1c02ae6f-4492-4915-b8f8-7492a3b1e4cd,810e96e4-e456-4468-9b59-f4e8f39732c0,efe8e2a3-eace-427b-b4f1-cb8a937ec77d,e9aa9a3e-5b2b-4ac7-a2c7-073de2b2b24f,8bbdbcdd-5cd4-4100-b6d5-b7c9625b6107,50f4348b-c883-4e2f-8f11-ce233b859fa1,fda095cb-831d-4601-ad94-846013963de8,f92806d7-1768-443f-afe8-12bcde84d0f0,dd3a144d-ab7f-41f0-82b8-2e43a090d496,f0416e68-0200-4b77-a926-4f9d16e494da,970b0598-bcb0-4714-91fb-2e81440dccd8,bcd64cc6-2dd9-43f6-abbe-66318d332032,d930590d-bb92-4cc8-8bd1-23cd027f9edf,a3cd009f-0ab0-420d-9278-b9fdab939bbc,c27215d8-6835-4b68-bfbb-bdeac6100c04,b5d6115f-0370-4d7c-aad3-c194cc71cf98,871c3b6c-7379-419d-bda3-794b239ab90d
+6-5-2024 02:13:20 - debug: Init bundle root assets success..., progress: 11%
+6-5-2024 02:13:20 - debug: Init bundle share assets start..., progress: 11%
+6-5-2024 02:13:20 - debug: Init bundle share assets success..., progress: 11%
+6-5-2024 02:13:20 - debug: handle json group in bundle internal
+6-5-2024 02:13:20 - debug: handle json group in bundle internal success
+6-5-2024 02:13:20 - debug: handle json group in bundle main
+6-5-2024 02:13:20 - debug: handle json group in bundle main success
+6-5-2024 02:13:20 - debug: // ---- build task Query asset bundle ---- (315ms)
+6-5-2024 02:13:20 - debug: run build task Query asset bundle success in 315 ms√, progress: 16%
+6-5-2024 02:13:20 - debug: [Build Memory track]: Query asset bundle start:255.78MB, end 258.45MB, increase: 2.67MB
+6-5-2024 02:13:20 - debug: Query asset bundle start, progress: 16%
+6-5-2024 02:13:20 - debug: // ---- build task Query asset bundle ----
+6-5-2024 02:13:20 - debug: // ---- build task Query asset bundle ---- (104ms)
+6-5-2024 02:13:20 - debug: run build task Query asset bundle success in 104 ms√, progress: 21%
+6-5-2024 02:13:20 - debug: [Build Memory track]: Query asset bundle start:258.47MB, end 258.64MB, increase: 175.87KB
+6-5-2024 02:13:20 - debug: web-mobile:(onAfterBundleDataTask) start..., progress: 21%
+6-5-2024 02:13:20 - debug: // ---- build task web-mobile：onAfterBundleDataTask ----
+6-5-2024 02:13:20 - debug: // ---- build task web-mobile：onAfterBundleDataTask ---- (126ms)
+6-5-2024 02:13:20 - debug: web-mobile:(onAfterBundleDataTask) in 126 ms ✓, progress: 21%
+6-5-2024 02:13:20 - debug: Build script start, progress: 21%
+6-5-2024 02:13:20 - debug: // ---- build task Build script ----
+6-5-2024 02:13:22 - debug: Generate systemJs..., progress: 21%
+6-5-2024 02:13:24 - debug: Build project script start..., progress: 21%
+6-5-2024 02:13:24 - debug: Build script in bundle start, progress: 21%
+6-5-2024 02:13:24 - log: Run build task(build-script) in child, see: chrome://inspect/#devices
+6-5-2024 02:13:24 - error: [build-script][0605/021324.379:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
+6-5-2024 02:13:25 - log: [build-script]enter sub process 21500, C:\ProgramData\cocos\editors\Creator\3.8.2\CocosCreator.exe,C:\ProgramData\cocos\editors\Creator\3.8.2\resources\app.asar\builtin\builder\static\sub-process-index
+6-5-2024 02:13:27 - log: [build-script]Create cjs interop url for 'file:///C:/Users/Admin/OneDrive/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js'
+6-5-2024 02:13:27 - log(3): [build-script]Create cjs interop url for 'file:///C:/Users/Admin/OneDrive/Desktop/dragonfix/extensions/Colyseus%20Multiplayer%20SDK/runtime/colyseus.js'
+6-5-2024 02:13:30 - debug: excute-script over with build-script 6284ms
+6-5-2024 02:13:30 - debug: Copy externalScripts success!
+6-5-2024 02:13:30 - debug: Build script in bundle success, progress: 21%
+6-5-2024 02:13:30 - debug: Build project script in (6407 ms) √, progress: 21%
+6-5-2024 02:13:30 - debug: Build engine start..., progress: 21%
+6-5-2024 02:13:30 - debug: Use cache engine: {link(C:\Users\Admin\AppData\Local\Temp\CocosCreator\3.8.2\builder\engine\e017cb99173310e7822a2d374e4a6a36)}
+6-5-2024 02:13:30 - debug: {"debug":false,"sourceMaps":false,"includeModules":["2d","animation","audio","base","dragon-bones","gfx-webgl","gfx-webgl2","intersection-2d","particle-2d","physics-2d-box2d","profiler","spine","tiled-map","tween","ui","video","webview"],"engineVersion":"3.8.2","md5Map":[],"engineName":"cocos-js","platform":"HTML5","useCache":true,"isNative":false,"split":false,"ammoJsWasm":"fallback","assetURLFormat":"runtime-resolved","output":"C:\\Users\\Admin\\OneDrive\\Desktop\\dragonfix\\build\\web-mobile-003\\cocos-js","flags":{"DEBUG":false,"WASM_FALLBACK":true,"CULL_ASM_JS_MODULE":false,"CULL_MESHOPT":true},"entry":"C:\\ProgramData\\cocos\\editors\\Creator\\3.8.2\\resources\\resources\\3d\\engine"}
+6-5-2024 02:13:30 - debug: Build engine in (191 ms) √, progress: 21%
+6-5-2024 02:13:30 - debug: Copy plugin script ..., progress: 21%
+6-5-2024 02:13:30 - debug: Generate import-map..., progress: 21%
+6-5-2024 02:13:30 - debug: // ---- build task Build script ---- (10537ms)
+6-5-2024 02:13:30 - debug: run build task Build script success in 10 s√, progress: 26%
+6-5-2024 02:13:30 - debug: [Build Memory track]: Build script start:259.02MB, end 298.96MB, increase: 39.94MB
+6-5-2024 02:13:30 - debug: Build Assets start, progress: 26%
+6-5-2024 02:13:30 - debug: // ---- build task Build Assets ----
+6-5-2024 02:13:30 - debug: Build bundles..., progress: 26%
+6-5-2024 02:13:30 - debug: Pack Images start, progress: 26%
+6-5-2024 02:13:31 - debug: builder:pack-auto-atlas-image (201ms)
+6-5-2024 02:13:31 - debug: Pack Images success, progress: 26%
+6-5-2024 02:13:31 - debug: Ouput asset in bundles start, progress: 26%
+6-5-2024 02:13:31 - debug: Handle all json groups in bundle internal
+6-5-2024 02:13:31 - debug: handle json group
+6-5-2024 02:13:31 - debug: Handle all json groups in bundle main
+6-5-2024 02:13:31 - debug: handle json group
+6-5-2024 02:13:31 - debug: Json group(08adb0e41) compile success，json number: 6
+6-5-2024 02:13:32 - debug: Json group(0ca60d3e4) compile success，json number: 6
+6-5-2024 02:13:32 - debug: handle single json
+6-5-2024 02:13:32 - debug: Json group(042932dcf) compile success，json number: 6
+6-5-2024 02:13:32 - debug: Json group(0c5d88353) compile success，json number: 6
+6-5-2024 02:13:32 - debug: Json group(04ed2dc15) compile success，json number: 6
+6-5-2024 02:13:33 - debug: Json group(0776e83e1) compile success，json number: 6
+6-5-2024 02:13:33 - debug: Json group(084d5ba64) compile success，json number: 6
+6-5-2024 02:13:33 - debug: Json group(0726ce82b) compile success，json number: 6
+6-5-2024 02:13:33 - debug: Json group(03064e4b6) compile success，json number: 6
+6-5-2024 02:13:33 - debug: Json group(017fd118b) compile success，json number: 6
+6-5-2024 02:13:34 - debug: Json group(09e6f581a) compile success，json number: 6
+6-5-2024 02:13:37 - debug: Json group(0ceaa4713) compile success，json number: 6
+6-5-2024 02:13:37 - debug: Json group(024fdd306) compile success，json number: 6
+6-5-2024 02:13:37 - debug: handle single json
+6-5-2024 02:13:38 - debug: Output asset in bundles success, progress: 26%
+6-5-2024 02:13:38 - debug: // ---- build task Build Assets ---- (7855ms)
+6-5-2024 02:13:38 - debug: run build task Build Assets success in 7 s√, progress: 31%
+6-5-2024 02:13:38 - debug: [Build Memory track]: Build Assets start:298.97MB, end 301.48MB, increase: 2.51MB
+6-5-2024 02:13:38 - debug: Add md5 suffix to assets start, progress: 31%
+6-5-2024 02:13:38 - debug: // ---- build task Add md5 suffix to assets ----
+6-5-2024 02:13:38 - debug: // ---- build task Add md5 suffix to assets ---- (66ms)
+6-5-2024 02:13:38 - debug: run build task Add md5 suffix to assets success in 66 ms√, progress: 36%
+6-5-2024 02:13:38 - debug: [Build Memory track]: Add md5 suffix to assets start:301.55MB, end 301.72MB, increase: 174.02KB
+6-5-2024 02:13:38 - debug: Query asset bundle start, progress: 36%
+6-5-2024 02:13:38 - debug: // ---- build task Query asset bundle ----
+6-5-2024 02:13:38 - debug: Output asset in bundles start, progress: 36%
+6-5-2024 02:13:38 - debug: compress config of bundle internal...
+6-5-2024 02:13:38 - debug: compress config of bundle internal success
+6-5-2024 02:13:38 - debug: compress config of bundle main...
+6-5-2024 02:13:38 - debug: compress config of bundle main success
+6-5-2024 02:13:38 - debug: ouput config of bundle internal
+6-5-2024 02:13:38 - debug: output config of bundle internal success
+6-5-2024 02:13:38 - debug: ouput config of bundle main
+6-5-2024 02:13:38 - debug: output config of bundle main success
+6-5-2024 02:13:38 - debug: Output asset in bundles success, progress: 36%
+6-5-2024 02:13:39 - debug: // ---- build task Query asset bundle ---- (169ms)
+6-5-2024 02:13:39 - debug: run build task Query asset bundle success in 169 ms√, progress: 41%
+6-5-2024 02:13:39 - debug: [Build Memory track]: Query asset bundle start:301.74MB, end 304.02MB, increase: 2.29MB
+6-5-2024 02:13:39 - debug: Sort some build options to settings.json start, progress: 41%
+6-5-2024 02:13:39 - debug: // ---- build task Sort some build options to settings.json ----
+6-5-2024 02:13:39 - debug: // ---- build task Sort some build options to settings.json ---- (72ms)
+6-5-2024 02:13:39 - debug: run build task Sort some build options to settings.json success in 72 ms√, progress: 43%
+6-5-2024 02:13:39 - debug: [Build Memory track]: Sort some build options to settings.json start:304.04MB, end 304.21MB, increase: 172.76KB
+6-5-2024 02:13:39 - debug: Fill script data to settings start, progress: 43%
+6-5-2024 02:13:39 - debug: // ---- build task Fill script data to settings ----
+6-5-2024 02:13:39 - debug: // ---- build task Fill script data to settings ---- (69ms)
+6-5-2024 02:13:39 - debug: run build task Fill script data to settings success in 69 ms√, progress: 44%
+6-5-2024 02:13:39 - debug: [Build Memory track]: Fill script data to settings start:304.22MB, end 304.39MB, increase: 174.42KB
+6-5-2024 02:13:39 - debug: Sort some build options to settings.json start, progress: 44%
+6-5-2024 02:13:39 - debug: // ---- build task Sort some build options to settings.json ----
+6-5-2024 02:13:39 - debug: // ---- build task Sort some build options to settings.json ---- (753ms)
+6-5-2024 02:13:39 - debug: run build task Sort some build options to settings.json success in 753 ms√, progress: 46%
+6-5-2024 02:13:39 - debug: [Build Memory track]: Sort some build options to settings.json start:304.41MB, end 304.66MB, increase: 253.86KB
+6-5-2024 02:13:39 - debug: web-mobile:(onBeforeCompressSettings) start..., progress: 46%
+6-5-2024 02:13:39 - debug: // ---- build task web-mobile：onBeforeCompressSettings ----
+6-5-2024 02:13:40 - debug: // ---- build task web-mobile：onBeforeCompressSettings ---- (91ms)
+6-5-2024 02:13:40 - debug: web-mobile:(onBeforeCompressSettings) in 91 ms ✓, progress: 48%
+6-5-2024 02:13:40 - debug: cocos-service:(onBeforeCompressSettings) start..., progress: 48%
+6-5-2024 02:13:40 - debug: // ---- build task cocos-service：onBeforeCompressSettings ----
+6-5-2024 02:13:41 - debug: // ---- build task cocos-service：onBeforeCompressSettings ---- (1047ms)
+6-5-2024 02:13:41 - debug: cocos-service:(onBeforeCompressSettings) in 1047 ms ✓, progress: 51%
+6-5-2024 02:13:41 - debug: Save Settings.json start, progress: 51%
+6-5-2024 02:13:41 - debug: // ---- build task Save Settings.json ----
+6-5-2024 02:13:41 - debug: // ---- build task Save Settings.json ---- (120ms)
+6-5-2024 02:13:41 - debug: run build task Save Settings.json success in 120 ms√, progress: 53%
+6-5-2024 02:13:41 - debug: [Build Memory track]: Save Settings.json start:298.54MB, end 298.71MB, increase: 179.09KB
+6-5-2024 02:13:41 - debug: Sort build template start, progress: 53%
+6-5-2024 02:13:41 - debug: // ---- build task Sort build template ----
+6-5-2024 02:13:41 - debug: // ---- build task Sort build template ---- (211ms)
+6-5-2024 02:13:41 - debug: run build task Sort build template success in 211 ms√, progress: 56%
+6-5-2024 02:13:41 - debug: [Build Memory track]: Sort build template start:298.73MB, end 302.09MB, increase: 3.36MB
+6-5-2024 02:13:41 - debug: cocos-service:(onAfterCompressSettings) start..., progress: 56%
+6-5-2024 02:13:41 - debug: // ---- build task cocos-service：onAfterCompressSettings ----
+6-5-2024 02:13:41 - debug: // ---- build task cocos-service：onAfterCompressSettings ---- (263ms)
+6-5-2024 02:13:41 - debug: cocos-service:(onAfterCompressSettings) in 263 ms ✓, progress: 58%
+6-5-2024 02:13:41 - debug: web-mobile:(onAfterBuild) start..., progress: 58%
+6-5-2024 02:13:41 - debug: // ---- build task web-mobile：onAfterBuild ----
+6-5-2024 02:13:41 - debug: Use build-template {link(C:\Users\Admin\OneDrive\Desktop\dragonfix\build-templates\web-mobile)}.
+6-5-2024 02:13:41 - debug: // ---- build task web-mobile：onAfterBuild ---- (132ms)
+6-5-2024 02:13:41 - debug: web-mobile:(onAfterBuild) in 132 ms ✓, progress: 60%
+6-5-2024 02:13:41 - debug: cocos-service:(onAfterBuild) start..., progress: 60%
+6-5-2024 02:13:41 - debug: // ---- build task cocos-service：onAfterBuild ----
+6-5-2024 02:13:42 - debug: // ---- build task cocos-service：onAfterBuild ---- (213ms)
+6-5-2024 02:13:42 - debug: cocos-service:(onAfterBuild) in 213 ms ✓, progress: 62%
+6-5-2024 02:13:42 - debug: adsense-h5g-plugin:(onAfterBuild) start..., progress: 62%
+6-5-2024 02:13:42 - debug: // ---- build task adsense-h5g-plugin：onAfterBuild ----
+6-5-2024 02:13:42 - debug: // ---- build task adsense-h5g-plugin：onAfterBuild ---- (235ms)
+6-5-2024 02:13:42 - debug: adsense-h5g-plugin:(onAfterBuild) in 235 ms ✓, progress: 64%
+6-5-2024 02:13:42 - log: Asset DB is resume!
+6-5-2024 02:13:42 - debug: builder:build-project-total (24232ms)
+6-5-2024 02:13:42 - debug: build success in 24232!
+6-5-2024 02:13:42 - debug: [Build Memory track]: builder:build-project-total start:254.95MB, end 300.00MB, increase: 45.05MB
+6-5-2024 02:13:42 - debug: ================================ build Task (web-mobile-003) Finished in (24 s)ms ================================
+6-5-2024 02:13:45 - debug: // ---- builder:run-build-stage-run ----
+6-5-2024 02:13:45 - log: [task:run]: init options success, 10%
+6-5-2024 02:13:45 - log: [task:run]: web-mobile:(run) start..., 10%
+6-5-2024 02:13:45 - debug: // ---- build task web-mobile：run ----
+6-5-2024 02:13:45 - debug: // ---- build task web-mobile：run ---- (107ms)
+6-5-2024 02:13:45 - log: [task:run]: web-mobile:(run) in 107 ms ✓, 23.333333333333332%
+6-5-2024 02:13:45 - debug: // ---- builder:run-build-stage-run ---- (163ms)
+6-5-2024 02:13:45 - debug: [Build Memory track]: builder:build-stage-total run start:307.36MB, end 307.74MB, increase: 381.09KB
+6-5-2024 02:13:45 - log: [task:run]: success!
+6-5-2024 02:18:35 - debug: // ---- builder:run-build-stage-run ----
+6-5-2024 02:18:35 - log: [task:run]: init options success, 10%
+6-5-2024 02:18:35 - log: [task:run]: web-mobile:(run) start..., 10%
+6-5-2024 02:18:35 - debug: // ---- build task web-mobile：run ----
+6-5-2024 02:18:35 - debug: // ---- build task web-mobile：run ---- (107ms)
+6-5-2024 02:18:35 - log: [task:run]: web-mobile:(run) in 107 ms ✓, 23.333333333333332%
+6-5-2024 02:18:35 - debug: // ---- builder:run-build-stage-run ---- (167ms)
+6-5-2024 02:18:35 - debug: [Build Memory track]: builder:build-stage-total run start:302.99MB, end 303.36MB, increase: 378.10KB
+6-5-2024 02:18:35 - log: [task:run]: success!

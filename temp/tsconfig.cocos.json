@@ -5,20 +5,20 @@
     "module": "ES2015",
     "strict": true,
     "types": [
-      "./temp/declarations/cc.custom-macro",
       "./temp/declarations/cc",
+      "./temp/declarations/cc.custom-macro",
       "./temp/declarations/jsb",
       "./temp/declarations/cc.env"
     ],
     "paths": {
       "db://internal/*": [
-        "/Applications/Cocos/Creator/3.8.2/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/*"
+        "C:\\ProgramData\\cocos\\editors\\Creator\\3.8.2\\resources\\resources\\3d\\engine\\editor\\assets\\*"
       ],
       "db://assets/*": [
-        "/Users/waostudio/Desktop/dragonfix/assets/*"
+        "C:\\Users\\Admin\\OneDrive\\Desktop\\dragonfix\\assets\\*"
       ],
       "db://colyseus-sdk/*": [
-        "/Users/waostudio/Desktop/dragonfix/extensions/Colyseus Multiplayer SDK/runtime/*"
+        "C:\\Users\\Admin\\OneDrive\\Desktop\\dragonfix\\extensions\\Colyseus Multiplayer SDK\\runtime\\*"
       ]
     },
     "experimentalDecorators": true,

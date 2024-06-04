@@ -3,7 +3,8 @@
   "builder": {
     "common": {
       "polyfills": {
-        "asyncFunctions": true
+        "asyncFunctions": false,
+        "coreJs": false
       },
       "buildPath": "project://build",
       "outputName": "web-mobile",
@@ -37,6 +38,18 @@
         "__version__": "1.0.1"
       },
       "1715916317905": {
+        "orientation": "landscape",
+        "embedWebDebugger": false,
+        "cullEngineAsmJsModule": false,
+        "__version__": "1.0.1"
+      },
+      "1717526149083": {
+        "orientation": "landscape",
+        "embedWebDebugger": false,
+        "cullEngineAsmJsModule": false,
+        "__version__": "1.0.1"
+      },
+      "1717528398001": {
         "orientation": "landscape",
         "embedWebDebugger": false,
         "cullEngineAsmJsModule": false,

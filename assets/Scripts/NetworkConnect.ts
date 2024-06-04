@@ -172,6 +172,11 @@ export class NetworkConnect extends Component {
             this.ListLabel[i].node.removeAllChildren();
           }
         }
+        for (let i = 0; i < this.ListLabelR.length; i++) {
+          if (usercancel === this.ListLabelR[i].string) {
+            this.ListLabelR[i].node.removeAllChildren();
+          }
+        }
       });
 
       // this.room.onMessage("result", (message) => {
@@ -318,6 +323,20 @@ export class NetworkConnect extends Component {
           );
         }
       }
+      let previousHostIndex = this.ListLabelR.findIndex(label => label.string === this.currentHost);
+
+if (previousHostIndex !== -1 && value.sessionId !== this.currentHost) {
+  // Đưa phần tử trước đó là currentHost xuống cuối mảng
+  let previousHost = this.ListLabelR.splice(previousHostIndex, 1)[0];
+  this.ListLabelR.push(previousHost);
+
+  // Cập nhật trạng thái của phần tử này
+  this.ListR[previousHostIndex].active = false;
+  this.ListR.push(this.ListR.splice(previousHostIndex, 1)[0]);
+
+  // Điều chỉnh displayIndexR nếu cần thiết
+  displayIndexR--;
+}
       if (value.isHost === true && value.sessionId !== this.currentHost) {
         const nameUser2 = value.displayName;
         if (nameUser2 && value.isHost === true) {
