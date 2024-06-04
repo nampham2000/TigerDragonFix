@@ -182,7 +182,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 572.0900321543409,
+    "_orthoHeight": 631.7684887459807,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -1687,7 +1687,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "hostname": "game-server.our-projects.org",
+    "hostname": "cd4a-104-28-237-71.ngrok-free.app",
     "port": 80,
     "useSSL": true,
     "boxNameRes": {
@@ -1713,6 +1713,9 @@
     },
     "ResTable": {
       "__id__": 47
+    },
+    "LoginTable": {
+      "__id__": 30
     },
     "ResBtnTb": {
       "__id__": 152

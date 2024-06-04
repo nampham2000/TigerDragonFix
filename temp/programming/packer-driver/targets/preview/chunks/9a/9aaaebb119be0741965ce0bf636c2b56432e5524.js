@@ -432,6 +432,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }
 
           if (this.NetworkConnect.gameState === "idle" && this.GameStateIdle === false) {
+            if (this.NetworkConnect.room && this.NetworkConnect.room.sessionId !== this.NetworkConnect.currentHost) {
+              this.host = false;
+            }
+
+            console.log("HostStatus:;;;;;;;;;", this.host);
+
             if (this.NetworkConnect.room && this.NetworkConnect.room.sessionId === this.NetworkConnect.currentHost) {
               if (this.host === false) {
                 this.bgHost.active = true;
@@ -654,18 +660,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             "4": this.listCardResHeart,
             "2": this.listCardResclubs,
             "3": this.listCardResdiamonds
-          }; // this.NetworkConnect.room.onMessage(
-          //   "result",
-          //   (message: { tigerCard: { suit: string; value: number } }) => {
-          //     console.log("aaaaaaaaaaaaaa");
-          // if (this.cardTigerValue !== undefined) {
-          //   this.cardTigerValue = this.NetworkConnect.tigerResult;
-          // }
-
-          console.log(this.cardTigerValue); // if (this.cardTigerValue === undefined) {
-          //   this.cardTigerValue = this.NetworkConnect.tigerResult;
-          // }
-
+          };
           var cardList = suitToResourceMap[this.cardTigerSuit];
 
           if (cardList) {

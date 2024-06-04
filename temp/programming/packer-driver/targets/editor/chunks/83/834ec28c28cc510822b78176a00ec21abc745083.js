@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, tween, Vec3, Animation, Colyseus, AudioController, Chip, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _crd, ccclass, property, NetworkConnect;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, tween, Vec3, Animation, Colyseus, AudioController, Chip, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _crd, ccclass, property, NetworkConnect;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -67,17 +67,17 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       }), _dec5 = property({
         type: Node
       }), _dec6 = property({
+        type: Node
+      }), _dec7 = property({
         type: Label
-      }), _dec7 = property(Label), _dec8 = property(Label), _dec9 = property({
+      }), _dec8 = property({
+        type: Label
+      }), _dec9 = property(Label), _dec10 = property(Label), _dec11 = property({
         type: _crd && Chip === void 0 ? (_reportPossibleCrUseOfChip({
           error: Error()
         }), Chip) : Chip
-      }), _dec10 = property({
-        type: Prefab
-      }), _dec11 = property({
-        type: Node
       }), _dec12 = property({
-        type: Node
+        type: Prefab
       }), _dec13 = property({
         type: Node
       }), _dec14 = property({
@@ -85,12 +85,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       }), _dec15 = property({
         type: Node
       }), _dec16 = property({
-        type: Prefab
+        type: Node
       }), _dec17 = property({
+        type: Node
+      }), _dec18 = property({
+        type: Prefab
+      }), _dec19 = property({
         type: _crd && AudioController === void 0 ? (_reportPossibleCrUseOfAudioController({
           error: Error()
         }), AudioController) : AudioController
-      }), _dec18 = property({
+      }), _dec20 = property({
         type: SpriteFrame
       }), _dec(_class = (_class2 = class NetworkConnect extends Component {
         constructor(...args) {
@@ -104,27 +108,31 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _initializerDefineProperty(this, "ListL", _descriptor4, this);
 
-          _initializerDefineProperty(this, "ListLabel", _descriptor5, this);
+          _initializerDefineProperty(this, "ListR", _descriptor5, this);
 
-          _initializerDefineProperty(this, "TimerDown", _descriptor6, this);
+          _initializerDefineProperty(this, "ListLabel", _descriptor6, this);
 
-          _initializerDefineProperty(this, "CoinWinAni", _descriptor7, this);
+          _initializerDefineProperty(this, "ListLabelR", _descriptor7, this);
 
-          _initializerDefineProperty(this, "chipNode", _descriptor8, this);
+          _initializerDefineProperty(this, "TimerDown", _descriptor8, this);
 
-          _initializerDefineProperty(this, "prfab", _descriptor9, this);
+          _initializerDefineProperty(this, "CoinWinAni", _descriptor9, this);
 
-          _initializerDefineProperty(this, "DragonNode", _descriptor10, this);
+          _initializerDefineProperty(this, "chipNode", _descriptor10, this);
 
-          _initializerDefineProperty(this, "TigerNode", _descriptor11, this);
+          _initializerDefineProperty(this, "prfab", _descriptor11, this);
 
-          _initializerDefineProperty(this, "TieNode", _descriptor12, this);
+          _initializerDefineProperty(this, "DragonNode", _descriptor12, this);
 
-          _initializerDefineProperty(this, "PayUser", _descriptor13, this);
+          _initializerDefineProperty(this, "TigerNode", _descriptor13, this);
 
-          _initializerDefineProperty(this, "ChipParent", _descriptor14, this);
+          _initializerDefineProperty(this, "TieNode", _descriptor14, this);
 
-          _initializerDefineProperty(this, "prefabs", _descriptor15, this);
+          _initializerDefineProperty(this, "PayUser", _descriptor15, this);
+
+          _initializerDefineProperty(this, "ChipParent", _descriptor16, this);
+
+          _initializerDefineProperty(this, "prefabs", _descriptor17, this);
 
           this.parentNodeChip = void 0;
           this.client = void 0;
@@ -151,9 +159,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.namePlayer = void 0;
           this.winnerPLayer = void 0;
 
-          _initializerDefineProperty(this, "AudioController", _descriptor16, this);
+          _initializerDefineProperty(this, "AudioController", _descriptor18, this);
 
-          _initializerDefineProperty(this, "PayUserSprite", _descriptor17, this);
+          _initializerDefineProperty(this, "PayUserSprite", _descriptor19, this);
         }
 
         async start() {
@@ -182,14 +190,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             const users = {}; // Sự kiện được kích hoạt khi một người dùng tham gia vào phòng
 
             console.log("Joined successfully!");
-            console.log("User's sessionId:", this.room.sessionId); // this.room.send(
-            //   "signup",
-            //   JSON.stringify({
-            //     email: "nampham78934@gmail.com",
-            //     password: "nam123455664",
-            //   })
-            // );
-
+            console.log("User's sessionId:", this.room.sessionId);
             this.room.onMessage("timer", message => {
               this.TimerDown.string = message;
 
@@ -264,26 +265,67 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           } catch (e) {
             console.error("Error:", e);
           }
-        }
+        } // updatePlayerList(playerList: any[]) {
+        //   let displayIndex = 0;
+        //   [
+        //     {
+        //       0: [{}],
+        //     },
+        //   ];
+        //   // // Lấy từng giá trị value từ
+        //   const list = playerList[0];
+        //   console.log("Listtttttt:", list);
+        //   const numElements = list.length;
+        //   this.ListL.forEach((node) => {
+        //     node.active = false;
+        //   });
+        //   list.forEach((value: any, key: any) => {
+        //     if (
+        //       value.sessionId !== this.room.sessionId &&
+        //       value.sessionId !== this.currentHost
+        //     ) {
+        //       const nameUser = value.displayName;
+        //       console.log("Hostttttttttttt:", value.isHost);
+        //       if (nameUser) {
+        //         // Check if nameUser is defined
+        //         this.ListLabel[displayIndex].string = nameUser;
+        //         this.ListL[displayIndex].active = true;
+        //         displayIndex++;
+        //         this.AudioController.onAudio(9);
+        //       } else {
+        //         console.warn(
+        //           `Player with sessionId ${value.sessionId} not found in room state.`
+        //         );
+        //       }
+        //     }
+        //   });
+        //   for (let i = displayIndex; i < this.ListL.length; i++) {
+        //     this.ListL[i].active = false;
+        //   }
+        // }
+
 
         updatePlayerList(playerList) {
           let displayIndex = 0;
+          let displayIndexR = 0;
           [{
             0: [{}]
           }]; // // Lấy từng giá trị value từ
 
           const list = playerList[0];
+          const list2 = playerList[0];
           console.log("Listtttttt:", list);
-          const numElements = list.length;
           this.ListL.forEach(node => {
+            node.active = false;
+          });
+          this.ListR.forEach(node => {
             node.active = false;
           });
           list.forEach((value, key) => {
             if (value.sessionId !== this.room.sessionId && value.sessionId !== this.currentHost) {
               const nameUser = value.displayName;
-              console.log("Hostttttttttttt:", value.isHost);
 
-              if (nameUser) {
+              if (nameUser && value.isHost === false) {
                 // Check if nameUser is defined
                 this.ListLabel[displayIndex].string = nameUser;
                 this.ListL[displayIndex].active = true;
@@ -293,30 +335,30 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                 console.warn(`Player with sessionId ${value.sessionId} not found in room state.`);
               }
             }
-          }); // for (let i = 0; i < numElements && displayIndex < this.ListL.length; i++) {
-          //   if (
-          //     list[i].sessionId !== this.room.sessionId &&
-          //     list[i].sessionId !== this.currentHost
-          //   ) {
-          //     const nameUser = list[i];
-          //     console.log("PLayerIaddddddddd", playerList[i].sessionId);
-          //     console.log("NAMEUSERRRRRRRRRRRRR", nameUser);
-          //     if (nameUser) {
-          //       // Check if nameUser is defined
-          //       this.ListLabel[displayIndex].string = nameUser.displayName;
-          //       this.ListL[displayIndex].active = true;
-          //       displayIndex++;
-          //       this.AudioController.onAudio(9);
-          //     } else {
-          //       console.warn(
-          //         `Player with sessionId ${playerList[i].sessionId} not found in room state.`
-          //       );
-          //     }
-          //   }
-          // }
+
+            if (value.isHost === true && value.sessionId !== this.currentHost) {
+              const nameUser2 = value.displayName;
+
+              if (nameUser2 && value.isHost === true) {
+                console.log("NameUser:;;;;;;;", nameUser2);
+                console.log(this.ListLabelR[displayIndexR]);
+                this.ListLabelR[displayIndexR].string = nameUser2;
+                this.ListR[displayIndexR].active = true;
+                displayIndexR++;
+                this.AudioController.onAudio(9);
+              } else {
+                console.warn(`Player with sessionId ${value.sessionId} not found in room state.`);
+              }
+            }
+          }); // list2.forEach((value: any, key: any) => {
+          // });
 
           for (let i = displayIndex; i < this.ListL.length; i++) {
             this.ListL[i].active = false;
+          }
+
+          for (let i = displayIndexR; i < this.ListR.length; i++) {
+            this.ListR[i].active = false;
           }
         }
 
@@ -349,6 +391,29 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
               this.ListLabel[i].node.addChild(spriteNode);
               this.ListLabel[i].node.inverseTransformPoint(v3, PosTarget.worldPosition);
+              tween(spriteNode).to(0.3, {
+                position: v3
+              }).start();
+              break;
+            }
+          }
+
+          for (let i = 0; i < this.ListLabelR.length; i++) {
+            if (sessionId === this.ListLabelR[i].string) {
+              // Thêm node mới làm con của node có label tương ứng
+              if (this.UserBet === "Dragon") {
+                PosTarget = this.DragonNode;
+                this.parentNodeChip = this.ChipParent[0];
+              } else if (this.UserBet === "Tiger") {
+                PosTarget = this.TigerNode;
+                this.parentNodeChip = this.ChipParent[1];
+              } else {
+                PosTarget = this.TieNode;
+                this.parentNodeChip = this.ChipParent[2];
+              }
+
+              this.ListLabelR[i].node.addChild(spriteNode);
+              this.ListLabelR[i].node.inverseTransformPoint(v3, PosTarget.worldPosition);
               tween(spriteNode).to(0.3, {
                 position: v3
               }).start();
@@ -451,73 +516,87 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         initializer: function () {
           return [];
         }
-      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "ListLabel", [_dec6], {
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "ListR", [_dec6], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "TimerDown", [_dec7], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "CoinWinAni", [_dec8], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "chipNode", [_dec9], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "prfab", [_dec10], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "DragonNode", [_dec11], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "TigerNode", [_dec12], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "TieNode", [_dec13], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "PayUser", [_dec14], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor14 = _applyDecoratedDescriptor(_class2.prototype, "ChipParent", [_dec15], {
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "ListLabel", [_dec7], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor15 = _applyDecoratedDescriptor(_class2.prototype, "prefabs", [_dec16], {
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "ListLabelR", [_dec8], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function () {
           return [];
         }
-      }), _descriptor16 = _applyDecoratedDescriptor(_class2.prototype, "AudioController", [_dec17], {
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "TimerDown", [_dec9], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor17 = _applyDecoratedDescriptor(_class2.prototype, "PayUserSprite", [_dec18], {
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "CoinWinAni", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "chipNode", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "prfab", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "DragonNode", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "TigerNode", [_dec14], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor14 = _applyDecoratedDescriptor(_class2.prototype, "TieNode", [_dec15], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor15 = _applyDecoratedDescriptor(_class2.prototype, "PayUser", [_dec16], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor16 = _applyDecoratedDescriptor(_class2.prototype, "ChipParent", [_dec17], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function () {
+          return [];
+        }
+      }), _descriptor17 = _applyDecoratedDescriptor(_class2.prototype, "prefabs", [_dec18], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function () {
+          return [];
+        }
+      }), _descriptor18 = _applyDecoratedDescriptor(_class2.prototype, "AudioController", [_dec19], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor19 = _applyDecoratedDescriptor(_class2.prototype, "PayUserSprite", [_dec20], {
         configurable: true,
         enumerable: true,
         writable: true,

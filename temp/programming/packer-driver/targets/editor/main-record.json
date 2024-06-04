@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 5989.030542001128,
+      "mTimestamp": 5694.342124999501,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -640,7 +640,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 23670413.38641701,
+      "mTimestamp": 3520035.1872919993,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -1089,7 +1089,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1717123466181,
+      "mTimestamp": 1717494534457,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -1317,7 +1317,7 @@
       ]
     },
     "cce:/internal/ml/cjs-loader.mjs": {
-      "mTimestamp": 1717123466181,
+      "mTimestamp": 1717494534457,
       "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
       "imports": [],
       "type": "esm",
@@ -12261,7 +12261,7 @@
     },
     "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/GameController.ts": {
       "mTimestamp": {
-        "mtime": 1717147132311.5361,
+        "mtime": 1717496101127.4875,
         "uuid": "d8ab5610-dd96-4f78-9795-6218739fe6f3"
       },
       "chunkId": "9aaaebb119be0741965ce0bf636c2b56432e5524",
@@ -12387,7 +12387,7 @@
     },
     "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/NetworkConnect.ts": {
       "mTimestamp": {
-        "mtime": 1717131218161.3,
+        "mtime": 1717498035854.717,
         "uuid": "f92887c2-9ea3-4ec7-b5ff-e017e453225f"
       },
       "chunkId": "834ec28c28cc510822b78176a00ec21abc745083",
@@ -12650,7 +12650,7 @@
     },
     "file:///Users/waostudio/Desktop/dragonfix/assets/Scripts/LoginScript/Connect.ts": {
       "mTimestamp": {
-        "mtime": 1717144517235.598,
+        "mtime": 1717413170848.327,
         "uuid": "9de53811-1bf6-4cff-9849-f4e249cab916"
       },
       "chunkId": "bce485f5f8d372ab066f9ad120c42cba32dc7bee",
@@ -12669,11 +12669,11 @@
           "value": "cc",
           "loc": {
             "start": {
-              "line": 16,
+              "line": 20,
               "column": 7
             },
             "end": {
-              "line": 16,
+              "line": 20,
               "column": 11
             }
           }
@@ -12683,11 +12683,11 @@
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
-              "line": 18,
+              "line": 22,
               "column": 21
             },
             "end": {
-              "line": 18,
+              "line": 22,
               "column": 52
             }
           }

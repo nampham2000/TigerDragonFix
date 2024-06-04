@@ -473,6 +473,14 @@ export class GameController extends Component {
     ) {
       if (
         this.NetworkConnect.room &&
+        this.NetworkConnect.room.sessionId !== this.NetworkConnect.currentHost
+      ) {
+        this.host = false;
+      }
+      console.log("HostStatus:;;;;;;;;;", this.host);
+
+      if (
+        this.NetworkConnect.room &&
         this.NetworkConnect.room.sessionId === this.NetworkConnect.currentHost
       ) {
         if (this.host === false) {
@@ -742,17 +750,6 @@ export class GameController extends Component {
       "2": this.listCardResclubs,
       "3": this.listCardResdiamonds,
     };
-    // this.NetworkConnect.room.onMessage(
-    //   "result",
-    //   (message: { tigerCard: { suit: string; value: number } }) => {
-    //     console.log("aaaaaaaaaaaaaa");
-    // if (this.cardTigerValue !== undefined) {
-    //   this.cardTigerValue = this.NetworkConnect.tigerResult;
-    // }
-    console.log(this.cardTigerValue);
-    // if (this.cardTigerValue === undefined) {
-    //   this.cardTigerValue = this.NetworkConnect.tigerResult;
-    // }
     const cardList: SpriteFrame[] | undefined =
       suitToResourceMap[this.cardTigerSuit];
     if (cardList) {

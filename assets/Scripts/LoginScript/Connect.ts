@@ -13,6 +13,10 @@ import {
   director,
   EditBox,
   Button,
+  input,
+  Input,
+  EventKeyboard,
+  KeyCode,
 } from "cc";
 const { ccclass, property } = _decorator;
 import Colyseus from "db://colyseus-sdk/colyseus.js";
@@ -57,6 +61,9 @@ export class NetworkConnect extends Component {
   private ResTable: Node;
 
   @property(Node)
+  private LoginTable: Node;
+
+  @property(Node)
   private ResBtnTb: Node;
 
   @property(Animation)
@@ -76,6 +83,8 @@ export class NetworkConnect extends Component {
 
   @property(Label)
   private warnLb: Label;
+
+  private isKeyPressHandled: boolean = false;
 
   // @property({
   //   type: Chip,
@@ -214,8 +223,27 @@ export class NetworkConnect extends Component {
     director.loadScene("Game");
   }
 
-  private showErrorMessage(message: string) {
-    // Hiển thị thông báo lỗi trên màn hình nếu cần
+  onKeyDown(event: EventKeyboard) {
+    if (this.isKeyPressHandled) return;
+    switch (event.keyCode) {
+      case KeyCode.ENTER:
+        // If the signup form is active, attempt to sign up
+        if (this.ResTable && this.ResTable.active === true) {
+          const email = this.boxNameRes.string;
+          const password = this.boxPassRes.string;
+          const name = this.boxRePassRes.string;
+          this.signUp(email, password, name);
+          this.isKeyPressHandled = true;
+          this.scheduleOnce(() => {
+            this.isKeyPressHandled = false;
+          }, 4);
+        }
+        if(this.LoginTable&&this.LoginTable.active)
+          {
+            
+          }
+        break;
+    }
   }
 
   private loginBtn() {
@@ -319,6 +347,7 @@ export class NetworkConnect extends Component {
       this.moveToGameScene();
     } else {
     }
+    input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
     // this.connect();
   }
 

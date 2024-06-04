@@ -30,8 +30,14 @@ export class NetworkConnect extends Component {
   @property({ type: Node })
   private ListL: Node[] = [];
 
+  @property({ type: Node })
+  private ListR: Node[] = [];
+
   @property({ type: Label })
   public ListLabel: Label[] = [];
+
+  @property({ type: Label })
+  public ListLabelR: Label[] = [];
 
   @property(Label)
   private TimerDown: Label;
@@ -141,13 +147,6 @@ export class NetworkConnect extends Component {
       // Sự kiện được kích hoạt khi một người dùng tham gia vào phòng
       console.log("Joined successfully!");
       console.log("User's sessionId:", this.room.sessionId);
-      // this.room.send(
-      //   "signup",
-      //   JSON.stringify({
-      //     email: "nampham78934@gmail.com",
-      //     password: "nam123455664",
-      //   })
-      // );
 
       this.room.onMessage("timer", (message) => {
         this.TimerDown.string = message;
@@ -236,22 +235,68 @@ export class NetworkConnect extends Component {
     }
   }
 
+  // updatePlayerList(playerList: any[]) {
+  //   let displayIndex = 0;
+
+  //   [
+  //     {
+  //       0: [{}],
+  //     },
+  //   ];
+
+  //   // // Lấy từng giá trị value từ
+  //   const list = playerList[0];
+  //   console.log("Listtttttt:", list);
+
+  //   const numElements = list.length;
+
+  //   this.ListL.forEach((node) => {
+  //     node.active = false;
+  //   });
+
+  //   list.forEach((value: any, key: any) => {
+  //     if (
+  //       value.sessionId !== this.room.sessionId &&
+  //       value.sessionId !== this.currentHost
+  //     ) {
+  //       const nameUser = value.displayName;
+  //       console.log("Hostttttttttttt:", value.isHost);
+
+  //       if (nameUser) {
+  //         // Check if nameUser is defined
+  //         this.ListLabel[displayIndex].string = nameUser;
+  //         this.ListL[displayIndex].active = true;
+  //         displayIndex++;
+  //         this.AudioController.onAudio(9);
+  //       } else {
+  //         console.warn(
+  //           `Player with sessionId ${value.sessionId} not found in room state.`
+  //         );
+  //       }
+  //     }
+  //   });
+  //   for (let i = displayIndex; i < this.ListL.length; i++) {
+  //     this.ListL[i].active = false;
+  //   }
+  // }
+
   updatePlayerList(playerList: any[]) {
     let displayIndex = 0;
-
+    let displayIndexR = 0;
     [
       {
         0: [{}],
       },
     ];
-
     // // Lấy từng giá trị value từ
     const list = playerList[0];
+    const list2 = playerList[0];
     console.log("Listtttttt:", list);
-
-    const numElements = list.length;
-
     this.ListL.forEach((node) => {
+      node.active = false;
+    });
+
+    this.ListR.forEach((node) => {
       node.active = false;
     });
 
@@ -261,9 +306,7 @@ export class NetworkConnect extends Component {
         value.sessionId !== this.currentHost
       ) {
         const nameUser = value.displayName;
-        console.log("Hostttttttttttt:", value.isHost);
-
-        if (nameUser) {
+        if (nameUser && value.isHost === false) {
           // Check if nameUser is defined
           this.ListLabel[displayIndex].string = nameUser;
           this.ListL[displayIndex].active = true;
@@ -275,32 +318,30 @@ export class NetworkConnect extends Component {
           );
         }
       }
+      if (value.isHost === true && value.sessionId !== this.currentHost) {
+        const nameUser2 = value.displayName;
+        if (nameUser2 && value.isHost === true) {
+          this.ListLabelR[displayIndexR].string = nameUser2;
+          this.ListR[displayIndexR].active = true;
+          displayIndexR++;
+          this.AudioController.onAudio(9);
+        } else {
+          console.warn(
+            `Player with sessionId ${value.sessionId} not found in room state.`
+          );
+        }
+      }
     });
 
-    // for (let i = 0; i < numElements && displayIndex < this.ListL.length; i++) {
-    //   if (
-    //     list[i].sessionId !== this.room.sessionId &&
-    //     list[i].sessionId !== this.currentHost
-    //   ) {
-    //     const nameUser = list[i];
-    //     console.log("PLayerIaddddddddd", playerList[i].sessionId);
+    // list2.forEach((value: any, key: any) => {
 
-    //     console.log("NAMEUSERRRRRRRRRRRRR", nameUser);
-    //     if (nameUser) {
-    //       // Check if nameUser is defined
-    //       this.ListLabel[displayIndex].string = nameUser.displayName;
-    //       this.ListL[displayIndex].active = true;
-    //       displayIndex++;
-    //       this.AudioController.onAudio(9);
-    //     } else {
-    //       console.warn(
-    //         `Player with sessionId ${playerList[i].sessionId} not found in room state.`
-    //       );
-    //     }
-    //   }
-    // }
+    // });
     for (let i = displayIndex; i < this.ListL.length; i++) {
       this.ListL[i].active = false;
+    }
+
+    for (let i = displayIndexR; i < this.ListR.length; i++) {
+      this.ListR[i].active = false;
     }
   }
 
@@ -333,6 +374,29 @@ export class NetworkConnect extends Component {
         }
         this.ListLabel[i].node.addChild(spriteNode);
         this.ListLabel[i].node.inverseTransformPoint(
+          v3,
+          PosTarget.worldPosition
+        );
+        tween(spriteNode).to(0.3, { position: v3 }).start();
+        break;
+      }
+    }
+
+    for (let i = 0; i < this.ListLabelR.length; i++) {
+      if (sessionId === this.ListLabelR[i].string) {
+        // Thêm node mới làm con của node có label tương ứng
+        if (this.UserBet === "Dragon") {
+          PosTarget = this.DragonNode;
+          this.parentNodeChip = this.ChipParent[0];
+        } else if (this.UserBet === "Tiger") {
+          PosTarget = this.TigerNode;
+          this.parentNodeChip = this.ChipParent[1];
+        } else {
+          PosTarget = this.TieNode;
+          this.parentNodeChip = this.ChipParent[2];
+        }
+        this.ListLabelR[i].node.addChild(spriteNode);
+        this.ListLabelR[i].node.inverseTransformPoint(
           v3,
           PosTarget.worldPosition
         );

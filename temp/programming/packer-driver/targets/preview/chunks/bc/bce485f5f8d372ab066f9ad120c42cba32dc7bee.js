@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Label, Node, Animation, director, EditBox, Button, Colyseus, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _crd, ccclass, property, loggedInUserSession, NetworkConnect;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Label, Node, Animation, director, EditBox, Button, input, Input, KeyCode, Colyseus, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _crd, ccclass, property, loggedInUserSession, NetworkConnect;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -32,6 +32,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       director = _cc.director;
       EditBox = _cc.EditBox;
       Button = _cc.Button;
+      input = _cc.input;
+      Input = _cc.Input;
+      KeyCode = _cc.KeyCode;
     }, function (_unresolved_2) {
       Colyseus = _unresolved_2.default;
     }],
@@ -40,7 +43,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
       _cclegacy._RF.push({}, "9de53gRG/ZM/5hJ9OJJyrkW", "Connect", undefined);
 
-      __checkObsolete__(['_decorator', 'Component', 'instantiate', 'Label', 'Node', 'Prefab', 'Sprite', 'SpriteFrame', 'tween', 'Vec3', 'Animation', 'director', 'EditBox', 'Button']);
+      __checkObsolete__(['_decorator', 'Component', 'instantiate', 'Label', 'Node', 'Prefab', 'Sprite', 'SpriteFrame', 'tween', 'Vec3', 'Animation', 'director', 'EditBox', 'Button', 'input', 'Input', 'EventKeyboard', 'KeyCode']);
 
       ({
         ccclass,
@@ -56,7 +59,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         type: Number
       }), _dec4 = property({
         type: Boolean
-      }), _dec5 = property(EditBox), _dec6 = property(EditBox), _dec7 = property(EditBox), _dec8 = property(EditBox), _dec9 = property(EditBox), _dec10 = property(Node), _dec11 = property(Animation), _dec12 = property(Node), _dec13 = property(Node), _dec14 = property(Animation), _dec15 = property(Animation), _dec16 = property(Button), _dec17 = property(Button), _dec18 = property(Button), _dec19 = property(Label), _dec(_class = (_class2 = class NetworkConnect extends Component {
+      }), _dec5 = property(EditBox), _dec6 = property(EditBox), _dec7 = property(EditBox), _dec8 = property(EditBox), _dec9 = property(EditBox), _dec10 = property(Node), _dec11 = property(Animation), _dec12 = property(Node), _dec13 = property(Node), _dec14 = property(Node), _dec15 = property(Animation), _dec16 = property(Animation), _dec17 = property(Button), _dec18 = property(Button), _dec19 = property(Button), _dec20 = property(Label), _dec(_class = (_class2 = class NetworkConnect extends Component {
         constructor() {
           super(...arguments);
 
@@ -82,20 +85,23 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           _initializerDefineProperty(this, "ResTable", _descriptor11, this);
 
-          _initializerDefineProperty(this, "ResBtnTb", _descriptor12, this);
+          _initializerDefineProperty(this, "LoginTable", _descriptor12, this);
 
-          _initializerDefineProperty(this, "WarnRes", _descriptor13, this);
+          _initializerDefineProperty(this, "ResBtnTb", _descriptor13, this);
 
-          _initializerDefineProperty(this, "WarnEmail", _descriptor14, this);
+          _initializerDefineProperty(this, "WarnRes", _descriptor14, this);
 
-          _initializerDefineProperty(this, "LoginBtn", _descriptor15, this);
+          _initializerDefineProperty(this, "WarnEmail", _descriptor15, this);
 
-          _initializerDefineProperty(this, "ResBtn", _descriptor16, this);
+          _initializerDefineProperty(this, "LoginBtn", _descriptor16, this);
 
-          _initializerDefineProperty(this, "LoginBtnactive", _descriptor17, this);
+          _initializerDefineProperty(this, "ResBtn", _descriptor17, this);
 
-          _initializerDefineProperty(this, "warnLb", _descriptor18, this);
+          _initializerDefineProperty(this, "LoginBtnactive", _descriptor18, this);
 
+          _initializerDefineProperty(this, "warnLb", _descriptor19, this);
+
+          this.isKeyPressHandled = false;
           // @property({
           //   type: Chip,
           // })
@@ -242,7 +248,27 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           director.loadScene("Game");
         }
 
-        showErrorMessage(message) {// Hiển thị thông báo lỗi trên màn hình nếu cần
+        onKeyDown(event) {
+          if (this.isKeyPressHandled) return;
+
+          switch (event.keyCode) {
+            case KeyCode.ENTER:
+              // If the signup form is active, attempt to sign up
+              if (this.ResTable && this.ResTable.active === true) {
+                var email = this.boxNameRes.string;
+                var password = this.boxPassRes.string;
+                var name = this.boxRePassRes.string;
+                this.signUp(email, password, name);
+                this.isKeyPressHandled = true;
+                this.scheduleOnce(() => {
+                  this.isKeyPressHandled = false;
+                }, 4);
+              }
+
+              if (this.LoginTable && this.LoginTable.active) {}
+
+              break;
+          }
         }
 
         loginBtn() {
@@ -344,8 +370,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
             this.LoadingPageProcess.active = true;
             this.loadingAnimProject.play();
             this.moveToGameScene();
-          } else {} // this.connect();
+          } else {}
 
+          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this); // this.connect();
         }
 
         connect() {// try {
@@ -462,37 +489,42 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "ResBtnTb", [_dec13], {
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "LoginTable", [_dec13], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "WarnRes", [_dec14], {
+      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "ResBtnTb", [_dec14], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor14 = _applyDecoratedDescriptor(_class2.prototype, "WarnEmail", [_dec15], {
+      }), _descriptor14 = _applyDecoratedDescriptor(_class2.prototype, "WarnRes", [_dec15], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor15 = _applyDecoratedDescriptor(_class2.prototype, "LoginBtn", [_dec16], {
+      }), _descriptor15 = _applyDecoratedDescriptor(_class2.prototype, "WarnEmail", [_dec16], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor16 = _applyDecoratedDescriptor(_class2.prototype, "ResBtn", [_dec17], {
+      }), _descriptor16 = _applyDecoratedDescriptor(_class2.prototype, "LoginBtn", [_dec17], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor17 = _applyDecoratedDescriptor(_class2.prototype, "LoginBtnactive", [_dec18], {
+      }), _descriptor17 = _applyDecoratedDescriptor(_class2.prototype, "ResBtn", [_dec18], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor18 = _applyDecoratedDescriptor(_class2.prototype, "warnLb", [_dec19], {
+      }), _descriptor18 = _applyDecoratedDescriptor(_class2.prototype, "LoginBtnactive", [_dec19], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor19 = _applyDecoratedDescriptor(_class2.prototype, "warnLb", [_dec20], {
         configurable: true,
         enumerable: true,
         writable: true,
