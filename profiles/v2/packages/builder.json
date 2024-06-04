@@ -225,8 +225,8 @@
         "id": "1715916317905",
         "progress": 1,
         "state": "success",
-        "stage": "run",
-        "message": "6-4-2024 17:58:58 run package /Users/waostudio/Desktop/dragonfix/build/web-mobile-001 success!",
+        "stage": "build",
+        "message": "6-4-2024 19:27:58 build success in 12 s!",
         "options": {
           "name": "TigerDragon",
           "server": "",
@@ -271,7 +271,7 @@
           "buildMode": "normal",
           "logDest": "project://temp/builder/log/web-mobile5-17-2024 10-25.log"
         },
-        "time": "6-4-2024 17:47:39",
+        "time": "6-4-2024 19:27:46",
         "dirty": false
       }
     }

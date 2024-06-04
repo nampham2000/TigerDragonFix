@@ -7087,7 +7087,7 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 49.983,
+      "x": 45.677499999999995,
       "y": 0,
       "z": 0
     },
@@ -11594,7 +11594,7 @@
         "__id__": 296
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 299
@@ -15419,7 +15419,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "hostname": "cd4a-104-28-237-71.ngrok-free.app",
+    "hostname": "game-server.our-projects.org",
     "port": 80,
     "useSSL": true,
     "ListL": [

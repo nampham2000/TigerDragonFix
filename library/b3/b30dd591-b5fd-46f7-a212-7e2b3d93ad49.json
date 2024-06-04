@@ -1687,7 +1687,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "hostname": "cd4a-104-28-237-71.ngrok-free.app",
+    "hostname": "game-server.our-projects.org",
     "port": 80,
     "useSSL": true,
     "boxNameRes": {

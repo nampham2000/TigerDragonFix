@@ -365,8 +365,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               var nameUser2 = value.displayName;
 
               if (nameUser2 && value.isHost === true) {
-                console.log("NameUser:;;;;;;;", nameUser2);
-                console.log(this.ListLabelR[displayIndexR]);
                 this.ListLabelR[displayIndexR].string = nameUser2;
                 this.ListR[displayIndexR].active = true;
                 displayIndexR++;
